@@ -1,0 +1,1 @@
+export function Loading() { return <div className="container loading-layout" role="status"><span className="sr-only">Seite wird geladen …</span><div className="skeleton skeleton-title" /><div className="skeleton skeleton-copy" /><div className="skeleton-grid">{Array.from({ length: 6 }, (_, i) => <div className="skeleton skeleton-poster" key={i} />)}</div></div>; }

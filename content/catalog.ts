@@ -1,0 +1,22 @@
+export type CatalogTitle = {
+  id: string; title: string; year: number; genre: string; genres: string[];
+  description: string; director: string; type: 'movie' | 'series';
+  image: string; source: string; license: string; licenseSource: string;
+  availability: 'editorial' | 'verified'; verifiedUntil?: string;
+};
+const studio = 'https://studio.blender.org';
+const shared = { type: 'movie' as const, availability: 'editorial' as const, license: 'CC BY', licenseSource: `${studio}/remixing/` };
+export const catalog: CatalogTitle[] = [
+  { ...shared, id: 'charge', title: 'Charge', year: 2022, genre: 'Science-Fiction', genres: ['Science-Fiction', 'Action & Abenteuer'], director: 'Hjalti Hjálmarsson', description: 'In einer Welt knapper Energie bricht ein Mann in eine Batteriefabrik ein. Ein Sicherheitsdroide stellt sich ihm in den Weg.', image: '/images/charge.webp', source: `${studio}/films/charge/` },
+  { ...shared, id: 'sintel', title: 'Sintel', year: 2010, genre: 'Fantasy', genres: ['Action & Abenteuer', 'Drama'], director: 'Colin Levy', description: 'Eine junge Reisende sucht einen kleinen Drachen. Ihre Reise führt sie durch eine ebenso wunderschöne wie gefährliche Welt.', image: '/images/sintel.webp', source: `${studio}/films/sintel/`, license: 'CC BY 3.0', licenseSource: 'https://durian.blender.org/sharing/' },
+  { ...shared, id: 'spring', title: 'Spring', year: 2019, genre: 'Fantasy', genres: ['Drama', 'Action & Abenteuer'], director: 'Andy Goralczyk', description: 'Ein Hirtenmädchen und ihr Hund begegnen uralten Naturgeistern. Ein atmosphärischer Animationskurzfilm über den Kreislauf des Lebens.', image: '/images/spring.webp', source: `${studio}/films/spring/` },
+  { ...shared, id: 'wing-it', title: 'Wing It!', year: 2023, genre: 'Komödie', genres: ['Komödien', 'Science-Fiction'], director: 'Rik Schutte', description: 'Ein gewissenhafter Ingenieur und ein begeisterter Möchtegernpilot landen gemeinsam in einem außer Kontrolle geratenen Raumschiff.', image: '/images/wing-it.webp', source: `${studio}/films/wing-it/` },
+  { ...shared, id: 'sprite-fright', title: 'Sprite Fright', year: 2021, genre: 'Horror-Komödie', genres: ['Komödien'], director: 'Matthew Luhn, Hjalti Hjálmarsson', description: 'Eine Gruppe Jugendlicher trifft im Wald auf pilzartige Wesen. Hinter der friedlichen Fassade wartet eine unerwartete Naturgewalt. Kein Kinderfilm.', image: '/images/sprite-fright.webp', source: `${studio}/films/sprite-fright/` },
+  { ...shared, id: 'cosmos-laundromat', title: 'Cosmos Laundromat', year: 2015, genre: 'Fantasy', genres: ['Drama', 'Science-Fiction'], director: 'Mathieu Auvray', description: 'Auf einer einsamen Insel begegnet ein Schaf einem geheimnisvollen Fremden. Der Pilotfilm öffnet die Tür zu ungewöhnlichen Welten.', image: '/images/cosmos-laundromat.webp', source: `${studio}/films/cosmos-laundromat/` },
+  { ...shared, id: 'big-buck-bunny', title: 'Big Buck Bunny', year: 2008, genre: 'Animation', genres: ['Komödien'], director: 'Sacha Goedegebure', description: 'Ein gutmütiger Hase wird von drei Waldbewohnern geärgert. Eine bunte, wortlose Animationskomödie aus dem Open-Movie-Projekt.', image: '/images/big-buck-bunny.webp', source: `${studio}/films/big-buck-bunny/`, license: 'CC BY 3.0', licenseSource: 'https://peach.blender.org/about/' },
+  { ...shared, id: 'caminandes-3', title: 'Caminandes: Llamigos', year: 2016, genre: 'Animationsreihe', genres: ['Komödien'], director: 'Pablo Vazquez', type: 'series', description: 'Koro, das Lama, kehrt im dritten Kurzfilm der Caminandes-Reihe zurück. Eine winterliche Begegnung dreht sich um eine köstliche Beere.', image: '/images/caminandes-3.webp', source: `${studio}/projects/caminandes-3/` },
+  { ...shared, id: 'caminandes-2', title: 'Caminandes: Gran Dillama', year: 2013, genre: 'Animationsreihe', genres: ['Komödien'], director: 'Pablo Vazquez', type: 'series', description: 'Im zweiten Kurzfilm der Caminandes-Reihe hat Koro ein Ziel vor Augen. Doch zwischen dem Lama und dem saftigen Gras liegt ein Hindernis.', image: '/images/caminandes-2.webp', source: `${studio}/projects/caminandes-2/` },
+];
+export const genres = ['Alle', 'Action & Abenteuer', 'Drama', 'Komödien', 'Science-Fiction', 'Dokumentationen'];
+export const serviceTitles = catalog.filter(t => t.availability === 'verified' && !!t.verifiedUntil && t.verifiedUntil >= new Date().toISOString().slice(0, 10));
+export const verifiedReviews: { name: string; quote: string; image: string; rating: number; verified: boolean }[] = [];
