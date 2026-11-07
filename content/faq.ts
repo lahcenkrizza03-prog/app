@@ -1,4 +1,4 @@
-import { planMonthsList } from '../config/business.ts';
+import { business, planMonthsList } from '../config/business.ts';
 export const faqs = [
   ['Was ist IPTV?', 'IPTV steht für Internet Protocol Television: Fernsehsignale werden über eine Internetverbindung übertragen. Entscheidend sind ein geeigneter Anbieter, die erforderlichen Nutzungsrechte und ein kompatibles Gerät.'],
   ['Wie funktioniert IPTV?', 'Das Bild wird als Datenstrom über das Internet an eine App oder ein Empfangsgerät übertragen. Eine stabile Verbindung, die passende Software und ein freigeschalteter Zugang sind die üblichen Voraussetzungen.'],
@@ -6,7 +6,7 @@ export const faqs = [
   ['Wie funktioniert die Einrichtung?', 'Frage zunächst nach der Freigabe für dein Gerät. Nach Klärung von Leistungsumfang und Vertragsbedingungen erhältst du die zutreffenden Einrichtungshinweise. Installiere nur Apps aus offiziellen Quellen und teile keine Zugangsdaten mit Dritten.'],
   ['Welche Abonnements gibt es?', `Zur Anfrage stehen Laufzeiten von ${planMonthsList()} Monaten für jeweils ein Gerät und einen Login. Die Preise und rechnerischen Monatswerte findest du auf der Preisseite. Eine WhatsApp-Nachricht ist noch kein Vertragsabschluss.`],
   ['Welche Zahlungsmethoden werden angeboten?', 'Es ist kein Online-Checkout eingebunden. Verfügbare Zahlungsmethoden, Zahlungszeitpunkt und verbindliche Gesamtpreise müssen vor einem Vertrag ausdrücklich bestätigt werden.'],
-  ['Wie kann ich den Kundenservice kontaktieren?', 'Für erste Anfragen steht WhatsApp unter +212 781 003 018 bereit. Die Nummer hat die marokkanische Landesvorwahl. Deutsche Ortsnähe, feste Servicezeiten oder Antwortfristen werden nicht zugesagt.'],
+  ['Wie kann ich den Kundenservice kontaktieren?', `Du erreichst ${business.company.legalName} per E-Mail an ${business.company.email} oder über WhatsApp unter ${business.whatsappDisplay}. Wähle auf der Kontaktseite dein Anliegen und bereite deine Nachricht vor.`],
   ['Wie funktioniert die Kündigung?', 'Die konkreten Kündigungs- und Verlängerungsbedingungen sind noch zu bestätigen. Kläre sie vor einem Vertrag. Auf der Seite „Kündigung“ findest du die verfügbaren Kontaktinformationen; diese Website nimmt derzeit keine Vertragserklärungen entgegen.'],
   ['Welche Inhalte sind verfügbar?', 'Es liegt noch keine verifizierte Sender- oder Programmliste für das Abo vor. Die Open-Movie-Auswahl ist eine redaktionelle Entdeckungsliste mit Quellenlinks und kein zugesicherter Bestandteil eines GermanIPTV-Abonnements.'],
 ];

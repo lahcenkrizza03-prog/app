@@ -15,7 +15,7 @@ test('monthly values use German EUR formatting and actual division', () => {
   assert.deepEqual(plans.map(p => money(p.cents / p.months).replace(/\s/g, '')), ['12,00€','9,67€','7,50€','4,92€']);
 });
 test('each WhatsApp link has the correct number and exact German plan inquiry', () => {
-  for (const p of plans) { const link = new URL(whatsappLink(planMessage(p.months))); assert.equal(link.origin, 'https://wa.me'); assert.equal(link.pathname, '/212781003018'); assert.equal(link.searchParams.get('text'), `Ich möchte den GermanIPTV 1 Gerät ${p.months} ${p.months === 1 ? 'Monat' : 'Monate'} Plan anfragen.`); }
+  for (const p of plans) { const link = new URL(whatsappLink(planMessage(p.months))); assert.equal(link.origin, 'https://wa.me'); assert.equal(link.pathname, '/6282314082948'); assert.equal(link.searchParams.get('text'), `Ich möchte den GermanIPTV 1 Gerät ${p.months} ${p.months === 1 ? 'Monat' : 'Monate'} Plan anfragen.`); }
 });
 test('catalog has provenance, unique ids, local artwork and no unverified streaming claims', () => {
   assert.equal(new Set(catalog.map(t => t.id)).size, catalog.length);
@@ -31,7 +31,7 @@ test('every required non-auth page has unique metadata', () => {
 });
 test('launch remains gated until required real-world business information exists', () => {
   assert.equal(business.publicLaunchReady, false); assert.equal(business.analyticsId, ''); assert.equal(business.verifiedServiceFeatures.length, 0);
-  assert.equal(business.company.legalName, '');
+  assert.equal(business.company.legalName, 'Anna Müller');
 });
 test('guides have distinct content and primary sources', () => {
   assert.equal(new Set(articles.map(a => a.slug)).size, articles.length);
