@@ -1,0 +1,13 @@
+# GermanIPTV
+
+> Deutschsprachiges Informations- und Anfrageangebot für Deutschland.
+
+Status: Vorbereitungsphase. Keine bestätigte Senderliste, kein Online-Checkout, keine verifizierte Abo-Verfügbarkeit. Open Movies sind redaktionelle Entdeckungen mit Quellenangaben.
+
+- [Preise](https://upip-tv.com/preise/): 3, 6, 12 und 24 Monate; ein Gerät/ein Login; unverbindliche Anfragen.
+- [FAQ](https://upip-tv.com/faq/)
+- [Geräte](https://upip-tv.com/geraete/)
+- [Kontakt](https://upip-tv.com/kontakt/)
+- [Anbieterangaben](https://upip-tv.com/impressum/)
+
+Diese Datei ist eine optionale Orientierungshilfe und keine Ranking-Zusage.

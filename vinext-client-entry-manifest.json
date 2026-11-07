@@ -1,0 +1,56 @@
+{
+  "appBrowserRuntime": "_next/static/chunks/DDiOKXfl.js",
+  "appBrowserEntry": "_next/static/chunks/DDiOKXfl.js",
+  "appRouteManifest": "_next/static/chunks/DPmBXA2B.js",
+  "appClientReferenceChunks": {
+    "references": {
+      "06f55b461cdd": 0,
+      "a95244d56b8f": 0,
+      "aa7f0c7bab4d": 1,
+      "256dff480a84": 2,
+      "f770e1b848d9": 2,
+      "45dc6c57fe5c": 2,
+      "e5bebc510e04": 3,
+      "1697f05726af": 4
+    },
+    "modules": [
+      {
+        "file": "_next/static/chunks/B8Dux7w8.js",
+        "imports": [
+          "_next/static/chunks/BvdcCk5X.js",
+          "_next/static/chunks/nU27x0Wf.js"
+        ],
+        "css": []
+      },
+      {
+        "file": "_next/static/chunks/CtjGxLcW.js",
+        "imports": [],
+        "css": []
+      },
+      {
+        "file": "_next/static/chunks/DLKTdMHp.js",
+        "imports": [
+          "_next/static/chunks/BvdcCk5X.js",
+          "_next/static/chunks/-8af_Qa7.js"
+        ],
+        "css": []
+      },
+      {
+        "file": "_next/static/chunks/DgiaEF4E.js",
+        "imports": [
+          "_next/static/chunks/nU27x0Wf.js",
+          "_next/static/chunks/BvdcCk5X.js"
+        ],
+        "css": []
+      },
+      {
+        "file": "_next/static/chunks/ctUYmLKk.js",
+        "imports": [
+          "_next/static/chunks/-8af_Qa7.js",
+          "_next/static/chunks/BvdcCk5X.js"
+        ],
+        "css": []
+      }
+    ]
+  }
+}
