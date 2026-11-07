@@ -5,6 +5,6 @@ export function sitemapText(urls: string[], modified: string) {
 export function robotsText(origin: string) {
   return `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${origin}/sitemap.xml\n`;
 }
-export function llmsText(name: string, links: { prices: string; faq: string; devices: string; contact: string; legal: string }) {
-  return `# ${name}\n\n> Deutschsprachiges Informations- und Anfrageangebot für Deutschland.\n\nStatus: Vorbereitungsphase. Keine bestätigte Senderliste, kein Online-Checkout, keine verifizierte Abo-Verfügbarkeit. Open Movies sind redaktionelle Entdeckungen mit Quellenangaben.\n\n- [Preise](${links.prices}): 3, 6, 12 und 24 Monate; ein Gerät/ein Login; unverbindliche Anfragen.\n- [FAQ](${links.faq})\n- [Geräte](${links.devices})\n- [Kontakt](${links.contact})\n- [Anbieterangaben](${links.legal})\n\nDiese Datei ist eine optionale Orientierungshilfe und keine Ranking-Zusage.\n`;
+export function llmsText(name: string, links: { prices: string; faq: string; devices: string; contact: string; legal: string }, durations: string) {
+  return `# ${name}\n\n> Deutschsprachiges Informations- und Anfrageangebot für Deutschland.\n\nStatus: Vorbereitungsphase. Keine bestätigte Senderliste, kein Online-Checkout, keine verifizierte Abo-Verfügbarkeit. Open Movies sind redaktionelle Entdeckungen mit Quellenangaben.\n\n- [Preise](${links.prices}): ${durations} Monate; ein Gerät/ein Login; unverbindliche Anfragen.\n- [FAQ](${links.faq})\n- [Geräte](${links.devices})\n- [Kontakt](${links.contact})\n- [Anbieterangaben](${links.legal})\n\nDiese Datei ist eine optionale Orientierungshilfe und keine Ranking-Zusage.\n`;
 }

@@ -28,7 +28,7 @@ if (build.error) throw build.error;
 if (build.status !== 0) process.exit(build.status || 1);
 
 Object.assign(process.env, { NEXT_PUBLIC_STATIC_EXPORT: '1', NEXT_PUBLIC_SITE_URL: siteUrl });
-const { business, pageUrl } = await import(pathToFileURL(path.join(root, 'config/business.ts')).href);
+const { business, pageUrl, planMonthsList } = await import(pathToFileURL(path.join(root, 'config/business.ts')).href);
 const { pages } = await import(pathToFileURL(path.join(root, 'content/pages.ts')).href);
 const { articles } = await import(pathToFileURL(path.join(root, 'content/articles.ts')).href);
 const { sitemapText, robotsText, llmsText } = await import(pathToFileURL(path.join(root, 'lib/site-files.ts')).href);
@@ -49,7 +49,7 @@ const directory = fs.mkdtempSync(path.join(outputs, `porkbun-${origin.hostname}-
 fs.cpSync(client, directory, { recursive: true, filter: (entry) => !entry.endsWith('.map') && path.basename(entry) !== '.vite' });
 fs.writeFileSync(path.join(directory, 'sitemap.xml'), sitemapText(paths.map(pageUrl), business.contentUpdated));
 fs.writeFileSync(path.join(directory, 'robots.txt'), robotsText(siteUrl));
-fs.writeFileSync(path.join(directory, 'llms.txt'), llmsText(business.name, { prices: pageUrl('/preise'), faq: pageUrl('/faq'), devices: pageUrl('/geraete'), contact: pageUrl('/kontakt'), legal: pageUrl('/impressum') }));
+fs.writeFileSync(path.join(directory, 'llms.txt'), llmsText(business.name, { prices: pageUrl('/preise'), faq: pageUrl('/faq'), devices: pageUrl('/geraete'), contact: pageUrl('/kontakt'), legal: pageUrl('/impressum') }, planMonthsList()));
 // Apache/cPanel can use these directives. Porkbun Static Hosting serves the
 // directory HTML directly and manages its own response headers and redirects.
 fs.writeFileSync(path.join(directory, '.htaccess'), `DirectoryIndex index.html\nOptions -Indexes -MultiViews\nErrorDocument 404 /404.html\n<IfModule mod_headers.c>\nHeader always set X-Content-Type-Options "nosniff"\nHeader always set Referrer-Policy "strict-origin-when-cross-origin"\n</IfModule>\n`);

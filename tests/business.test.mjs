@@ -7,15 +7,15 @@ import { catalog, serviceTitles, verifiedReviews } from '../content/catalog.ts';
 import { pages } from '../content/pages.ts';
 import { articles } from '../content/articles.ts';
 test('four supplied totals and durations are preserved, with only twelve months highlighted', () => {
-  assert.deepEqual(plans.map(p => [p.months, p.cents]), [[3,2499],[6,3999],[12,5999],[24,11999]]);
+  assert.deepEqual(plans.map(p => [p.months, p.cents]), [[1,1200],[3,2900],[6,4500],[12,5900]]);
   assert.deepEqual(plans.filter(p => p.featured).map(p => p.months), [12]);
   assert.ok(plans.every(p => p.devices === 1));
 });
 test('monthly values use German EUR formatting and actual division', () => {
-  assert.deepEqual(plans.map(p => money(p.cents / p.months).replace(/\s/g, '')), ['8,33€','6,67€','5,00€','5,00€']);
+  assert.deepEqual(plans.map(p => money(p.cents / p.months).replace(/\s/g, '')), ['12,00€','9,67€','7,50€','4,92€']);
 });
 test('each WhatsApp link has the correct number and exact German plan inquiry', () => {
-  for (const p of plans) { const link = new URL(whatsappLink(planMessage(p.months))); assert.equal(link.origin, 'https://wa.me'); assert.equal(link.pathname, '/212781003018'); assert.equal(link.searchParams.get('text'), `Ich möchte den GermanIPTV 1 Gerät ${p.months} Monate Plan anfragen.`); }
+  for (const p of plans) { const link = new URL(whatsappLink(planMessage(p.months))); assert.equal(link.origin, 'https://wa.me'); assert.equal(link.pathname, '/212781003018'); assert.equal(link.searchParams.get('text'), `Ich möchte den GermanIPTV 1 Gerät ${p.months} ${p.months === 1 ? 'Monat' : 'Monate'} Plan anfragen.`); }
 });
 test('catalog has provenance, unique ids, local artwork and no unverified streaming claims', () => {
   assert.equal(new Set(catalog.map(t => t.id)).size, catalog.length);
