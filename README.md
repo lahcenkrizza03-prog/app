@@ -24,6 +24,15 @@ Die Browserprüfungen verwenden ein vorhandenes Chrome. `CHROME_PATH` und `TEST_
 
 ## Geschäftsdaten
 
+Für Porkbun Static Hosting und **upip-tv.com** gibt es jetzt einen getrennten statischen Export:
+
+```text
+npm run build:porkbun
+npm run test:porkbun
+```
+
+Das fertige Upload-Archiv liegt unter `outputs/upip-tv.com-upload.zip`. Der erzeugte Deployment-Branch **porkbun** dient GitHub Connect; **main** enthält den Quellcode. [Porkbun-Anleitung und DNS-Befund](docs/PORKBUN.md).
+
 Preise, Laufzeiten und die WhatsApp-Nummer werden in [config/business.ts](config/business.ts) gepflegt. Die vier gelieferten Gesamtpreise sind unverändert; Monatswerte werden berechnet. Jeder Tarif öffnet die korrekte unverbindliche WhatsApp-Anfrage.
 
 Die Website behauptet keinen vorhandenen Player, Login, Checkout oder abgeschlossenen Kauf. Die redaktionelle Open-Movie-Auswahl mit Bildlizenzen belegt keine GermanIPTV-Aboverfügbarkeit. Unbestätigte Senderzahlen und Kundenbewertungen werden nicht erfunden.

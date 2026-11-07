@@ -1,6 +1,7 @@
+export const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === '1';
 export const business = {
   name: 'GermanIPTV',
-  url: 'https://germaniptv.rainybongo.chatgpt.site',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://germaniptv.rainybongo.chatgpt.site',
   locale: 'de-DE',
   currency: 'EUR',
   whatsapp: '212781003018',
@@ -22,6 +23,10 @@ export const plans = [
 
 export function money(cents: number) {
   return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(cents / 100);
+}
+export function pageUrl(path: string) {
+  const suffix = path === '/' ? (isStaticExport ? '/' : '') : isStaticExport && !/\.[a-z0-9]+$/i.test(path) ? `${path.replace(/\/$/, '')}/` : path;
+  return `${business.url}${suffix}`;
 }
 export function planMessage(months: number) {
   return `Ich möchte den GermanIPTV 1 Gerät ${months} Monate Plan anfragen.`;

@@ -1,2 +1,6 @@
-import { business } from '@/config/business';
-export function GET() { return new Response(`# GermanIPTV\n\n> Deutschsprachiges Informations- und Anfrageangebot für Deutschland.\n\nStatus: Vorbereitungsphase. Keine bestätigte Senderliste, kein Online-Checkout, keine verifizierte Abo-Verfügbarkeit. Open Movies sind redaktionelle Entdeckungen mit Quellenangaben.\n\n- [Preise](${business.url}/preise): 3, 6, 12 und 24 Monate; ein Gerät/ein Login; unverbindliche Anfragen.\n- [FAQ](${business.url}/faq)\n- [Geräte](${business.url}/geraete)\n- [Kontakt](${business.url}/kontakt)\n- [Anbieterangaben](${business.url}/impressum)\n\nDiese Datei ist eine optionale Orientierungshilfe und keine Ranking-Zusage.\n`, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } }); }
+import { business, pageUrl } from '@/config/business';
+import { llmsText } from '@/lib/site-files';
+export function GET() {
+  const body = llmsText(business.name, { prices: pageUrl('/preise'), faq: pageUrl('/faq'), devices: pageUrl('/geraete'), contact: pageUrl('/kontakt'), legal: pageUrl('/impressum') });
+  return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+}
