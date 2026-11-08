@@ -18,6 +18,6 @@ export const articles = [
     ['Inhalte konkret benennen lassen', 'Frage nach Sendern und Titeln sowie ihrer Verfügbarkeit in Deutschland. Eine Metadaten-Datenbank oder ein Filmplakat bestätigt kein Streamingrecht. Besondere Sportereignisse können zusätzliche und zeitlich begrenzte Rechte benötigen.'],
     ['Gesamtpreis statt nur Monatswert', 'Vergleiche den Gesamtpreis der Laufzeit. Ein rechnerischer Monatswert ist keine Zusage monatlicher Zahlung. Kläre Umsatzsteuer, Zahlungsart, Verlängerung und Kündigungsbedingungen vor der Zahlung.'],
     ['Anfrage und Vertragsabschluss unterscheiden', 'Ein vorausgefüllter WhatsApp-Text hilft beim ersten Kontakt. Er ist auf dieser Website kein Checkout. Bitte um ein vollständiges Angebot und prüfe es, bevor du einen Vertrag schließt.'],
-    ['Diese Website einordnen', 'upip-tv.com befindet sich in der Vorbereitungsphase. Die rechtlichen Betreiberangaben und die konkrete Leistungsbestätigung fehlen noch. Die vorhandene Oberfläche dient Information und unverbindlichen Anfragen.'],
+    ['Diese Website einordnen', 'upip-tv.com befindet sich in der Vorbereitungsphase. Anbieter- und Kontaktangaben stehen im Impressum. Der genaue Senderkatalog und die Informationen zu Verbreitungsrechten für Deutschland sind noch zu ergänzen. Die vorhandene Oberfläche dient Information und unverbindlichen Anfragen.'],
   ], source: 'https://www.gesetze-im-internet.de/ddg/__5.html', sourceLabel: 'DDG § 5: Allgemeine Informationspflichten' },
 ];

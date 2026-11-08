@@ -6,6 +6,7 @@ import { plans, money, planMessage, whatsappLink, business } from '../config/bus
 import { catalog, serviceTitles, verifiedReviews } from '../content/catalog.ts';
 import { pages } from '../content/pages.ts';
 import { articles } from '../content/articles.ts';
+import { indexablePaths, draftLegalPaths, shouldIndexPath } from '../config/indexing.ts';
 test('four supplied totals and durations are preserved, with only twelve months highlighted', () => {
   assert.deepEqual(plans.map(p => [p.months, p.cents]), [[1,1200],[3,2900],[6,4500],[12,5900]]);
   assert.deepEqual(plans.filter(p => p.featured).map(p => p.months), [12]);
@@ -28,6 +29,19 @@ test('every required non-auth page has unique metadata', () => {
   for (const path of required) assert.ok(pages[path]);
   assert.equal(new Set(Object.values(pages).map(p => p.title)).size, Object.keys(pages).length);
   assert.equal(new Set(Object.values(pages).map(p => p.description)).size, Object.keys(pages).length);
+});
+
+test('public search includes finished pages, excludes legal drafts and never exposes private previews', () => {
+  const allPaths = [...Object.keys(pages), ...articles.map(article => `/ratgeber/${article.slug}`)];
+  assert.equal(indexablePaths.length, 13);
+  assert.equal(draftLegalPaths.length, 5);
+  assert.deepEqual([...indexablePaths].sort(), allPaths.filter(path => !draftLegalPaths.includes(path)).sort());
+  for (const path of allPaths) {
+    assert.equal(shouldIndexPath(path, false), false, `private ${path}`);
+    assert.equal(shouldIndexPath(path, true), !draftLegalPaths.includes(path), `public ${path}`);
+  }
+  for (const path of ['/404', '/api/private', '/does-not-exist']) assert.equal(shouldIndexPath(path, true), false);
+  assert.equal(shouldIndexPath('/preise/?source=test', true), true);
 });
 test('launch remains gated until required real-world business information exists', () => {
   assert.equal(business.publicLaunchReady, false); assert.equal(business.analyticsId, ''); assert.equal(business.verifiedServiceFeatures.length, 0);

@@ -21,16 +21,17 @@ fs.symlinkSync(path.join(root, 'node_modules'), path.join(checkout, 'node_module
 // release. Export the shared error design through a build-only concrete route.
 fs.mkdirSync(path.join(checkout, 'app/404'), { recursive: true });
 fs.writeFileSync(path.join(checkout, 'app/404/page.tsx'), `export { default } from '../not-found';\nexport const metadata = { title: 'Seite nicht gefunden | upip-tv.com', robots: { index: false, follow: true } };\n`);
-const env = { ...process.env, NODE_ENV: 'production', NEXT_PUBLIC_STATIC_EXPORT: '1', NEXT_PUBLIC_SITE_URL: siteUrl };
+const env = { ...process.env, NODE_ENV: 'production', NEXT_PUBLIC_STATIC_EXPORT: '1', NEXT_PUBLIC_SITE_URL: siteUrl, NEXT_PUBLIC_SEARCH_INDEXING: '1' };
 console.log(`Building a static website for ${siteUrl}`);
 const build = spawnSync(process.execPath, [path.join(root, 'node_modules/vite/bin/vite.js'), 'build', '--config', path.join(checkout, 'vite.porkbun.config.ts')], { cwd: checkout, env, stdio: 'inherit', windowsHide: true });
 if (build.error) throw build.error;
 if (build.status !== 0) process.exit(build.status || 1);
 
-Object.assign(process.env, { NEXT_PUBLIC_STATIC_EXPORT: '1', NEXT_PUBLIC_SITE_URL: siteUrl });
+Object.assign(process.env, { NEXT_PUBLIC_STATIC_EXPORT: '1', NEXT_PUBLIC_SITE_URL: siteUrl, NEXT_PUBLIC_SEARCH_INDEXING: '1' });
 const { business, pageUrl, planMonthsList } = await import(pathToFileURL(path.join(root, 'config/business.ts')).href);
 const { pages } = await import(pathToFileURL(path.join(root, 'content/pages.ts')).href);
 const { articles } = await import(pathToFileURL(path.join(root, 'content/articles.ts')).href);
+const { shouldIndexPath } = await import(pathToFileURL(path.join(root, 'config/indexing.ts')).href);
 const { sitemapText, robotsText, llmsText } = await import(pathToFileURL(path.join(root, 'lib/site-files.ts')).href);
 const paths = [...Object.keys(pages), ...articles.map(a => `/ratgeber/${a.slug}`)];
 const client = path.join(checkout, 'dist/client');
@@ -47,7 +48,7 @@ if (!fs.existsSync(path.join(client, '404.html'))) throw new Error('Missing stat
 
 const directory = fs.mkdtempSync(path.join(outputs, `porkbun-${origin.hostname}-`));
 fs.cpSync(client, directory, { recursive: true, filter: (entry) => !entry.endsWith('.map') && path.basename(entry) !== '.vite' });
-fs.writeFileSync(path.join(directory, 'sitemap.xml'), sitemapText(paths.map(pageUrl), business.contentUpdated));
+fs.writeFileSync(path.join(directory, 'sitemap.xml'), sitemapText(paths.filter(route => shouldIndexPath(route)).map(pageUrl), business.contentUpdated));
 fs.writeFileSync(path.join(directory, 'robots.txt'), robotsText(siteUrl));
 fs.writeFileSync(path.join(directory, 'llms.txt'), llmsText(business.name, { prices: pageUrl('/preise'), faq: pageUrl('/faq'), devices: pageUrl('/geraete'), contact: pageUrl('/kontakt'), legal: pageUrl('/impressum') }, planMonthsList()));
 // Apache/cPanel can use these directives. Porkbun Static Hosting serves the
@@ -66,6 +67,6 @@ collect(directory);
 if (Object.keys(files).some(name => name.startsWith('server/') || name.startsWith('node_modules/') || name.startsWith('.git/'))) throw new Error('Server or source metadata leaked into the static package.');
 const archive = path.join(outputs, `${origin.hostname}-upload.zip`);
 fs.writeFileSync(archive, zipSync(files, { level: 6 }));
-const result = { origin: siteUrl, directory, archive, pageCount: paths.length, fileCount: Object.keys(files).length, archiveBytes: fs.statSync(archive).size, noindex: !business.publicLaunchReady };
+const result = { origin: siteUrl, directory, archive, pageCount: paths.length, fileCount: Object.keys(files).length, archiveBytes: fs.statSync(archive).size, noindex: !paths.some(route => shouldIndexPath(route)), indexablePageCount: paths.filter(route => shouldIndexPath(route)).length, noindexPageCount: paths.filter(route => !shouldIndexPath(route)).length };
 fs.writeFileSync(path.join(outputs, 'porkbun-latest.json'), JSON.stringify(result, null, 2));
 console.log(JSON.stringify(result, null, 2));
