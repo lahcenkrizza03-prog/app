@@ -3,6 +3,7 @@ import { business, pageUrl } from '@/config/business';
 import { shouldIndexPath } from '@/config/indexing';
 import { pages } from '@/content/pages';
 import { articles } from '@/content/articles';
+import { contentUpdatedForPath } from '@/lib/content-updates';
 
 export function seo(path: string, custom?: { title: string; description: string }): Metadata {
   const page = custom || pages[path];
@@ -16,7 +17,7 @@ export function seo(path: string, custom?: { title: string; description: string 
       title, description: page.description, url: pageUrl(path),
       images: [{ url: `${business.url}/images/og-upip-tv.webp`, width: 1200, height: 630, alt: `${business.name} – Entertainment für Deutschland` }],
       locale: 'de_DE', siteName: business.name,
-      ...(article ? { type: 'article' as const, modifiedTime: business.contentUpdated } : { type: 'website' as const }),
+      ...(article ? { type: 'article' as const, modifiedTime: contentUpdatedForPath(path) } : { type: 'website' as const }),
     },
     twitter: { card: 'summary_large_image', title, description: page.description, images: [`${business.url}/images/og-upip-tv.webp`] },
   };
@@ -45,7 +46,7 @@ export function StructuredData({ path, title }: { path: string; title?: string }
       ...(path !== '/' ? [{ '@type': 'BreadcrumbList', itemListElement: crumbs }] : []),
       ...(article ? [{
         '@type': 'Article', '@id': `${url}#article`, headline: article.title,
-        description: article.description, inLanguage: 'de-DE', dateModified: business.contentUpdated,
+        description: article.description, inLanguage: 'de-DE', dateModified: contentUpdatedForPath(path),
         mainEntityOfPage: { '@id': `${url}#page` },
         author: { '@type': 'Organization', name: `${business.name} Redaktion` },
         publisher: { '@id': `${business.url}/#organization` },

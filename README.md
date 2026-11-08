@@ -37,7 +37,7 @@ Preise, Laufzeiten und die WhatsApp-Nummer werden in [config/business.ts](config
 
 Die Website behauptet keinen vorhandenen Player, Login, Checkout oder abgeschlossenen Kauf. Die redaktionelle Open-Movie-Auswahl mit Bildlizenzen belegt keine upip-tv.com-Aboverfügbarkeit. Unbestätigte Senderzahlen und Kundenbewertungen werden nicht erfunden.
 
-Die private Vorschau verwendet absichtlich `noindex`. Der Porkbun-Build aktiviert mit `NEXT_PUBLIC_SEARCH_INDEXING=1` die 13 freigegebenen Informationsseiten aus `config/indexing.ts`. Die fünf rechtlichen Entwürfe bleiben `noindex, follow` und werden aus der Sitemap ausgeschlossen. Betreiberidentität, Rechte und Vertragsbedingungen müssen vor dem öffentlichen Geschäftsbetrieb vollständig sein. Einzelheiten und die Reihenfolge der Suchmaschinenfreigabe stehen in der Startcheckliste.
+Die private Vorschau verwendet absichtlich `noindex`. Der Porkbun-Build aktiviert mit `NEXT_PUBLIC_SEARCH_INDEXING=1` die 14 freigegebenen Informationsseiten aus `config/indexing.ts`. Die fünf rechtlichen Entwürfe bleiben `noindex, follow` und werden aus der Sitemap ausgeschlossen. Betreiberidentität, Rechte und Vertragsbedingungen müssen vor dem öffentlichen Geschäftsbetrieb vollständig sein. Einzelheiten und die Reihenfolge der Suchmaschinenfreigabe stehen in der Startcheckliste.
 
 ## Dokumentation
 

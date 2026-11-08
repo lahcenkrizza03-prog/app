@@ -5,7 +5,7 @@ export const searchIndexingEnabled = process.env.NEXT_PUBLIC_SEARCH_INDEXING ===
 export const indexablePaths = [
   '/', '/tv-kanaele', '/filme', '/serien', '/preise', '/geraete', '/faq',
   '/ueber-uns', '/kontakt', '/ratgeber', '/ratgeber/was-ist-iptv',
-  '/ratgeber/iptv-smart-tv-checkliste', '/ratgeber/iptv-anbieter-pruefen',
+  '/ratgeber/iptv-smart-tv-checkliste', '/ratgeber/iptv-anbieter-pruefen', '/ratgeber/iptv-kosten-laufzeiten',
 ] as const;
 
 export const draftLegalPaths = ['/datenschutz', '/impressum', '/agb', '/widerruf', '/kuendigung'] as const;

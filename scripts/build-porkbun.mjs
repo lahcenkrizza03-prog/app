@@ -32,6 +32,7 @@ const { business, pageUrl, planMonthsList } = await import(pathToFileURL(path.jo
 const { pages } = await import(pathToFileURL(path.join(root, 'content/pages.ts')).href);
 const { articles } = await import(pathToFileURL(path.join(root, 'content/articles.ts')).href);
 const { shouldIndexPath } = await import(pathToFileURL(path.join(root, 'config/indexing.ts')).href);
+const { contentUpdatedForPath } = await import(pathToFileURL(path.join(root, 'lib/content-updates.ts')).href);
 const { sitemapText, robotsText, llmsText } = await import(pathToFileURL(path.join(root, 'lib/site-files.ts')).href);
 const paths = [...Object.keys(pages), ...articles.map(a => `/ratgeber/${a.slug}`)];
 const client = path.join(checkout, 'dist/client');
@@ -48,7 +49,7 @@ if (!fs.existsSync(path.join(client, '404.html'))) throw new Error('Missing stat
 
 const directory = fs.mkdtempSync(path.join(outputs, `porkbun-${origin.hostname}-`));
 fs.cpSync(client, directory, { recursive: true, filter: (entry) => !entry.endsWith('.map') && path.basename(entry) !== '.vite' });
-fs.writeFileSync(path.join(directory, 'sitemap.xml'), sitemapText(paths.filter(route => shouldIndexPath(route)).map(pageUrl), business.contentUpdated));
+fs.writeFileSync(path.join(directory, 'sitemap.xml'), sitemapText(paths.filter(route => shouldIndexPath(route)).map(pageUrl), business.contentUpdated, Object.fromEntries(paths.map(route => [pageUrl(route), contentUpdatedForPath(route)]))));
 fs.writeFileSync(path.join(directory, 'robots.txt'), robotsText(siteUrl));
 fs.writeFileSync(path.join(directory, 'llms.txt'), llmsText(business.name, { prices: pageUrl('/preise'), faq: pageUrl('/faq'), devices: pageUrl('/geraete'), contact: pageUrl('/kontakt'), legal: pageUrl('/impressum') }, planMonthsList()));
 // Apache/cPanel can use these directives. Porkbun Static Hosting serves the

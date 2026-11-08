@@ -33,7 +33,7 @@ test('every required non-auth page has unique metadata', () => {
 
 test('public search includes finished pages, excludes legal drafts and never exposes private previews', () => {
   const allPaths = [...Object.keys(pages), ...articles.map(article => `/ratgeber/${article.slug}`)];
-  assert.equal(indexablePaths.length, 13);
+  assert.equal(indexablePaths.length, 14);
   assert.equal(draftLegalPaths.length, 5);
   assert.deepEqual([...indexablePaths].sort(), allPaths.filter(path => !draftLegalPaths.includes(path)).sort());
   for (const path of allPaths) {

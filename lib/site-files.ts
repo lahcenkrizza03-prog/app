@@ -1,6 +1,6 @@
-export function sitemapText(urls: string[], modified: string) {
+export function sitemapText(urls: string[], modified: string, modifiedByUrl: Record<string, string> = {}) {
   const escape = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  return `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(url => `<url><loc>${escape(url)}</loc><lastmod>${escape(modified)}</lastmod></url>`).join('')}</urlset>`;
+  return `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(url => `<url><loc>${escape(url)}</loc><lastmod>${escape(modifiedByUrl[url] || modified)}</lastmod></url>`).join('')}</urlset>`;
 }
 export function robotsText(origin: string) {
   return `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${origin}/sitemap.xml\n`;
