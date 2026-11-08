@@ -5,28 +5,20 @@
   "appClientReferenceChunks": {
     "references": {
       "1697f05726af": 0,
-      "256dff480a84": 1,
-      "f770e1b848d9": 1,
-      "45dc6c57fe5c": 1,
-      "06f55b461cdd": 2,
-      "a95244d56b8f": 2,
-      "aa7f0c7bab4d": 3,
-      "e5bebc510e04": 4
+      "06f55b461cdd": 1,
+      "a95244d56b8f": 1,
+      "aa7f0c7bab4d": 2,
+      "e5bebc510e04": 3,
+      "256dff480a84": 4,
+      "f770e1b848d9": 4,
+      "45dc6c57fe5c": 4
     },
     "modules": [
       {
-        "file": "_next/static/chunks/BqBfUNiR.js",
+        "file": "_next/static/chunks/CCNDRQue.js",
         "imports": [
-          "_next/static/chunks/TUGJ73uf.js",
+          "_next/static/chunks/CX0VgwgO.js",
           "_next/static/chunks/BvdcCk5X.js"
-        ],
-        "css": []
-      },
-      {
-        "file": "_next/static/chunks/BqCgd93u.js",
-        "imports": [
-          "_next/static/chunks/BvdcCk5X.js",
-          "_next/static/chunks/TUGJ73uf.js"
         ],
         "css": []
       },
@@ -48,6 +40,14 @@
         "imports": [
           "_next/static/chunks/DW1-28-Y.js",
           "_next/static/chunks/BvdcCk5X.js"
+        ],
+        "css": []
+      },
+      {
+        "file": "_next/static/chunks/DOgz6J_d.js",
+        "imports": [
+          "_next/static/chunks/BvdcCk5X.js",
+          "_next/static/chunks/CX0VgwgO.js"
         ],
         "css": []
       }
