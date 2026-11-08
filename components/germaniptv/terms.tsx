@@ -1,4 +1,4 @@
-import { business, money, planDuration, plans, whatsappLink } from '@/config/business';
+import { business, money, planDuration, plans, whatsappLink, activationInformation, refundInformation } from '@/config/business';
 
 const chapters = [
   ['anbieter', 'Anbieter und Geltungsbereich'],
@@ -75,14 +75,14 @@ export function Terms() {
 
     <section id="agb-laufzeit">
       <h2>6. Beginn, Laufzeit und Kündigung</h2>
-      <p>Zur Anfrage stehen ausschließlich ein, drei, sechs oder zwölf Monate. Ein 24-Monats-Plan wird nicht angeboten. Die Aktivierung erfolgt nach Zahlungseingang. Die gebuchte Laufzeit beginnt mit der Aktivierung des Zugangs. Eine maximale Aktivierungsfrist nach Zahlungseingang ist noch zu bestätigen; der konkrete Aktivierungstermin sowie Beginn und Ende deiner Laufzeit werden vor der Buchung mitgeteilt.</p>
+      <p>Zur Anfrage stehen ausschließlich ein, drei, sechs oder zwölf Monate. Ein 24-Monats-Plan wird nicht angeboten. {activationInformation()} Die gebuchte Laufzeit beginnt mit der Aktivierung des Zugangs. Beginn und Ende deiner Laufzeit werden vor der Buchung mitgeteilt.</p>
       <p>Der Zugang endet nach der gebuchten Laufzeit automatisch. Eine Kündigung zum regulären Laufzeitende ist nicht erforderlich. Es gibt keine automatische Verlängerung und keine automatische Folgeabbuchung. Wenn du den Zugang fortsetzen möchtest, ist eine neue Bestellung erforderlich. Gesetzliche Rechte zur vorzeitigen Vertragsbeendigung bleiben unberührt.</p>
       <p>Diese Website verwaltet derzeit keine Vertragsbestände und bestätigt keine Kündigungen. Bei einem bestehenden Vertrag gelten die dort vereinbarten Bedingungen und die gesetzlichen Rechte. Informationen zum aktuellen Kontaktweg stehen unter <a href="/kuendigung">Kündigung</a>.</p>
     </section>
 
     <section id="agb-nutzung">
       <h2>7. Nutzung und Zugangsdaten</h2>
-      <p>Jedes Abonnement ist auf ein Gerät und einen Login begrenzt. Die Bedingungen für einen Wechsel auf ein anderes oder ein Ersatzgerät sind noch zu bestätigen. Ein Recht auf zusätzliche gleichzeitige Verbindungen, Weiterverkauf, öffentliche Vorführung oder Weitergabe an Dritte wird dadurch nicht zugesagt. Die zulässige Nutzung eines späteren Zugangs muss im konkreten Angebot beschrieben werden.</p>
+      <p>Jedes Abonnement ist auf ein Gerät und einen Login begrenzt. Ein Wechsel auf ein Ersatzgerät ist erlaubt, solange das Abonnement nur auf einem Gerät genutzt wird. Ein Recht auf zusätzliche gleichzeitige Verbindungen, Weiterverkauf, öffentliche Vorführung oder Weitergabe an Dritte wird dadurch nicht zugesagt. Die zulässige Nutzung eines späteren Zugangs muss im konkreten Angebot beschrieben werden.</p>
       <p>Übermittle bei einer Anfrage nur die für dein Anliegen erforderlichen Angaben. Teile keine Passwörter, Zahlungsdaten oder Ausweiskopien in einer ersten Nachricht. Auf der Website werden keine fremden Streaming-Zugangsdaten abgefragt.</p>
     </section>
 
@@ -95,8 +95,8 @@ export function Terms() {
     <section id="agb-widerruf">
       <h2>9. Widerruf und Erstattungen</h2>
       <h3>Freiwillige Erstattungen</h3>
-      <p>Die Anbieterin bietet Erstattungen jederzeit an.</p>
-      <p><strong>Noch zu ergänzen – Einzelheiten der Erstattung:</strong> Ob der vollständige Betrag oder ein anteiliger Betrag für ungenutzte Zeit erstattet wird, die Bearbeitungsdauer und der Zeitpunkt, zu dem der Zugang nach einer Erstattungsanfrage endet, sind noch zu bestätigen. Hierfür werden keine Berechnung oder Fristen unterstellt. Gesetzliche Widerrufs- und Mängelrechte bleiben von dieser zusätzlichen Erstattungsmöglichkeit unberührt.</p>
+      <p>{refundInformation()}</p>
+      <p>Gesetzliche Widerrufs- und Mängelrechte bleiben von dieser zusätzlichen Erstattungsmöglichkeit unberührt.</p>
       <h3>Gesetzlicher Widerruf</h3>
       <p>Eine unverbindliche Anfrage ist kein entgeltlicher Vertrag. Vor einem späteren Fernabsatzvertrag müssen dir die für das konkrete Produkt geltenden Widerrufsinformationen und gegebenenfalls ein Muster-Widerrufsformular bereitgestellt werden.</p>
       <p>Ein Klick auf einen WhatsApp-Link oder eine Anfrage lässt ein gesetzliches Widerrufsrecht nicht entfallen. Die Voraussetzungen für einen vorzeitigen Leistungsbeginn und ein mögliches Erlöschen hängen von der konkreten Leistung und den gesetzlichen Anforderungen ab. Die Seite <a href="/widerruf">Widerruf</a> beschreibt den aktuellen Vorbereitungsstand; sie ist noch keine vollständige Belehrung für ein konkretes Abonnement.</p>
@@ -125,9 +125,7 @@ export function Terms() {
       <ul>
         <li>Genauer Sender- und Inhaltskatalog des angebotenen IPTV-Dienstes</li>
         <li>Informationen und Nachweise zu den Verbreitungsrechten für Deutschland</li>
-        <li>Konkrete Zahlungsabwicklung und Aktivierungsfrist für das tatsächliche Angebot</li>
-        <li>Bedingungen für den Wechsel auf ein anderes oder ein Ersatzgerät</li>
-        <li>Vollständige oder anteilige Erstattung, Bearbeitungsdauer und Ende des Zugangs bei einer Erstattung</li>
+        <li>Konkrete Zahlungsabwicklung für das tatsächliche Angebot</li>
         <li>Passende Widerrufsinformationen, Vertragsbestätigung und erforderliche Schlichtungsangaben</li>
       </ul>
       <p>Nach Festlegung dieser Angaben muss die Vertragsfassung auf das tatsächliche Geschäftsmodell abgestimmt und vor ihrem Einsatz rechtlich geprüft werden.</p>

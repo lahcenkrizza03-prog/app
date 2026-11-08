@@ -9,7 +9,13 @@ export const business = {
   publicLaunchReady: false,
   analyticsId: '',
   company: { legalName: 'Anna Müller', address: 'Platz der Republik 1, 11011 Berlin, Deutschland', email: 'annamuller@web.de', vatId: '' },
-  terms: { vat: 'included', renewal: 'new-order', cancellation: 'automatic-expiry', withdrawal: '', paymentMethods: ['PayPal', 'Banküberweisung'], activation: 'after-payment', periodStart: 'activation', refundAvailability: 'anytime' },
+  terms: {
+    vat: 'included', renewal: 'new-order', cancellation: 'automatic-expiry', withdrawal: '',
+    paymentMethods: ['PayPal', 'Banküberweisung'], activation: 'after-payment', activationMaxHours: 24,
+    activationClock: 'received-and-confirmed', bankActivationClock: 'credited-to-account',
+    periodStart: 'activation', replacementDeviceAllowed: true,
+    refundAvailability: 'anytime', refundAmount: 'full', refundProcessingDays: 1, refundAccessEnd: 'completed',
+  },
   contentUpdated: '2026-11-08',
   verifiedServiceFeatures: [] as string[],
   unverifiedClaims: ['20.000+ Live-Kanäle', '60.000+ Filme & Serien', 'Sport & PPV', 'Anti-Freeze Technologie', 'WhatsApp Support'],
@@ -24,6 +30,12 @@ export const plans = [
 
 export function money(cents: number) {
   return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(cents / 100);
+}
+export function activationInformation() {
+  return `Die Aktivierung erfolgt spätestens ${business.terms.activationMaxHours} Stunden nach Eingang und Bestätigung der Zahlung. Bei Banküberweisungen beginnt diese Frist mit der Gutschrift auf dem Konto der Anbieterin.`;
+}
+export function refundInformation() {
+  return 'Die Anbieterin bietet jederzeit eine vollständige Erstattung des gezahlten Betrags auf Anfrage an. Die Erstattung wird innerhalb eines Tages nach Eingang der Anfrage bearbeitet. Der Zugang endet, sobald die Erstattung abgeschlossen ist.';
 }
 export function planDuration(months: number) {
   return `${months} ${months === 1 ? 'Monat' : 'Monate'}`;
