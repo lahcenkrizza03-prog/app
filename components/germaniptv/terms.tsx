@@ -20,7 +20,7 @@ export function Terms() {
     <aside className="draft-notice" aria-label="Stand der Vertragsbedingungen">
       <div>
         <strong>AGB-Entwurf · noch nicht zur Verwendung für entgeltliche Abonnements freigegeben</strong>
-        <p>Diese Fassung enthält die bestätigten Preise, Zahlungsarten und Laufzeitregeln. Der konkrete lizenzierte Leistungsumfang und die dazu passenden vollständigen Widerrufsinformationen müssen noch ergänzt werden. Bis dahin wird dieser Entwurf nicht als vereinbarte Abo-AGB verwendet.</p>
+        <p>Diese Fassung enthält die Angaben der direkten IPTV-Anbieterin zum Angebotsumfang sowie die bestätigten Preise, Zahlungsarten und Laufzeitregeln. Der genaue Senderkatalog, die Informationen zu Verbreitungsrechten für Deutschland und die passenden vollständigen Widerrufsinformationen müssen noch ergänzt werden. Bis dahin wird dieser Entwurf nicht als vereinbarte Abo-AGB verwendet.</p>
       </div>
     </aside>
     <p>Stand: <time dateTime={business.contentUpdated}>{new Intl.DateTimeFormat('de-DE', { timeZone: 'UTC' }).format(new Date(`${business.contentUpdated}T12:00:00Z`))}</time> · Vertragssprache: Deutsch</p>
@@ -37,6 +37,7 @@ export function Terms() {
         E-Mail: <a href={`mailto:${business.company.email}`}>{business.company.email}</a><br />
         WhatsApp: <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">{business.whatsappDisplay}</a>
       </address>
+      <p>{business.company.legalName} tritt für upip-tv.com als direkte IPTV-Anbieterin auf. Die hier veröffentlichten Angaben zu ihrem Dienst beruhen auf ihren eigenen Informationen.</p>
       <p>Weitere Anbieterangaben stehen im <a href="/impressum">Impressum</a>. Die Nutzung der Informationsseiten ist kostenfrei. Ein entgeltlicher Streamingzugang wird durch den Besuch der Website nicht eingerichtet.</p>
     </section>
 
@@ -48,7 +49,9 @@ export function Terms() {
 
     <section id="agb-leistung">
       <h2>3. Leistungsumfang und Inhalte</h2>
-      <p>Die Informationen zu IPTV, Geräten und Bildqualität dienen der Orientierung. Eine verbindliche Senderliste oder ein bestätigter upip-tv.com-Abo-Katalog liegt derzeit nicht vor. Konkrete Sender, Filme, Serien, Sportereignisse, Sprachen, Auflösungen, Empfangsgebiete und Nutzungsrechte müssen vor einer Buchung im Angebot benannt werden.</p>
+      <p><strong>Bestätigte Beschreibung des Angebots:</strong> Nach Angaben der Anbieterin umfasst das Abonnement den Zugang zum vollständigen Senderangebot ihres eigenen IPTV-Dienstes. Dieser Angebotsumfang ist für die Laufzeiten von einem, drei, sechs und zwölf Monaten vorgesehen.</p>
+      <p><strong>Noch zu ergänzen – Senderkatalog:</strong> Die genaue Sender- und Inhaltsliste wurde noch nicht bereitgestellt. Die tatsächlich enthaltenen Sender und gegebenenfalls weitere Inhalte, Sprachen, Auflösungen und technischen Beschränkungen müssen vor einer Buchung konkret benannt werden. Die allgemeine Beschreibung bestätigt keine bestimmten Sender, Filme, Serien oder Sportereignisse.</p>
+      <p><strong>Noch zu ergänzen – Verbreitungsrechte für Deutschland:</strong> Die Informationen, die eine Berechtigung zur Verbreitung der angebotenen Inhalte in Deutschland bestätigen, wurden noch nicht bereitgestellt. Die Bezeichnung als direkte Anbieterin und der Hinweis auf das vollständige Senderangebot ersetzen diese Angaben nicht. Eine entsprechende Rechtefreigabe wird hier nicht als bestätigt dargestellt.</p>
       <p>Die gezeigten Open Movies sind redaktionelle Empfehlungen mit Quellen- und Lizenzangaben. Sie sind keine Zusage, dass diese Titel in einem Abonnement enthalten sind. Es wird kein Anspruch auf ungeprüfte Kanalzahlen, bestimmte Sport- oder PPV-Rechte oder einen bestimmten Veröffentlichungsplan zugesichert.</p>
     </section>
 
@@ -116,7 +119,8 @@ export function Terms() {
     <aside className="panel" aria-label="Noch zu bestätigende Vertragsdetails">
       <h2>Vor der Verwendung als Abo-AGB zu bestätigen</h2>
       <ul>
-        <li>Konkrete lizenzierte Leistung und Freigabe für Deutschland</li>
+        <li>Genauer Sender- und Inhaltskatalog des angebotenen IPTV-Dienstes</li>
+        <li>Informationen und Nachweise zu den Verbreitungsrechten für Deutschland</li>
         <li>Konkrete Zahlungsabwicklung und Aktivierungsfrist für das tatsächliche Angebot</li>
         <li>Passende Widerrufsinformationen, Vertragsbestätigung und erforderliche Schlichtungsangaben</li>
       </ul>
