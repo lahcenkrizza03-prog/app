@@ -9,7 +9,7 @@ export const business = {
   publicLaunchReady: false,
   analyticsId: '',
   company: { legalName: 'Anna Müller', address: 'Platz der Republik 1, 11011 Berlin, Deutschland', email: 'annamuller@web.de', vatId: '' },
-  terms: { vat: 'included', renewal: 'new-order', cancellation: 'automatic-expiry', withdrawal: '', paymentMethods: ['PayPal', 'Banküberweisung'], activation: 'after-payment' },
+  terms: { vat: 'included', renewal: 'new-order', cancellation: 'automatic-expiry', withdrawal: '', paymentMethods: ['PayPal', 'Banküberweisung'], activation: 'after-payment', periodStart: 'activation', refundAvailability: 'anytime' },
   contentUpdated: '2026-11-08',
   verifiedServiceFeatures: [] as string[],
   unverifiedClaims: ['20.000+ Live-Kanäle', '60.000+ Filme & Serien', 'Sport & PPV', 'Anti-Freeze Technologie', 'WhatsApp Support'],
