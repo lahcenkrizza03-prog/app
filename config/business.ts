@@ -1,7 +1,7 @@
 export const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === '1';
 export const business = {
-  name: 'GermanIPTV',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://germaniptv.rainybongo.chatgpt.site',
+  name: 'upip-tv.com',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://upip-tv.com',
   locale: 'de-DE',
   currency: 'EUR',
   whatsapp: '6282314082948',
@@ -9,7 +9,7 @@ export const business = {
   publicLaunchReady: false,
   analyticsId: '',
   company: { legalName: 'Anna Müller', address: 'Platz der Republik 1, 11011 Berlin, Deutschland', email: 'annamuller@web.de', vatId: '' },
-  terms: { vat: '', renewal: '', cancellation: '', withdrawal: '' },
+  terms: { vat: 'included', renewal: 'new-order', cancellation: 'automatic-expiry', withdrawal: '', paymentMethods: ['PayPal', 'Banküberweisung', 'Kartenzahlung'], activation: 'after-payment' },
   contentUpdated: '2026-11-08',
   verifiedServiceFeatures: [] as string[],
   unverifiedClaims: ['20.000+ Live-Kanäle', '60.000+ Filme & Serien', 'Sport & PPV', 'Anti-Freeze Technologie', 'WhatsApp Support'],
@@ -39,8 +39,8 @@ export function pageUrl(path: string) {
   return `${business.url}${suffix}`;
 }
 export function planMessage(months: number) {
-  return `Ich möchte den GermanIPTV 1 Gerät ${planDuration(months)} Plan anfragen.`;
+  return `Ich möchte den upip-tv.com 1 Gerät ${planDuration(months)} Plan anfragen.`;
 }
-export function whatsappLink(message = 'Ich möchte mehr über GermanIPTV erfahren.') {
+export function whatsappLink(message = 'Ich möchte mehr über upip-tv.com erfahren.') {
   return `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(message)}`;
 }

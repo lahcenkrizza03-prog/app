@@ -1,4 +1,4 @@
-# GermanIPTV
+# upip-tv.com
 
 Deutschsprachige, responsive Streaming-Entdeckungs- und Anfragewebsite für Deutschland. React, TypeScript, Vinext und Cloudflare Workers. Die Gestaltung folgt der bereitgestellten schwarzen/violetten Streaming-Referenz mit originalem Hero-Motiv und lizenzierten Open-Movie-Plakaten.
 
@@ -35,7 +35,7 @@ Das fertige Upload-Archiv liegt unter `outputs/upip-tv.com-upload.zip`. Der erze
 
 Preise, Laufzeiten und die WhatsApp-Nummer werden in [config/business.ts](config/business.ts) gepflegt. Die vier gelieferten Gesamtpreise sind unverändert; Monatswerte werden berechnet. Jeder Tarif öffnet die korrekte unverbindliche WhatsApp-Anfrage.
 
-Die Website behauptet keinen vorhandenen Player, Login, Checkout oder abgeschlossenen Kauf. Die redaktionelle Open-Movie-Auswahl mit Bildlizenzen belegt keine GermanIPTV-Aboverfügbarkeit. Unbestätigte Senderzahlen und Kundenbewertungen werden nicht erfunden.
+Die Website behauptet keinen vorhandenen Player, Login, Checkout oder abgeschlossenen Kauf. Die redaktionelle Open-Movie-Auswahl mit Bildlizenzen belegt keine upip-tv.com-Aboverfügbarkeit. Unbestätigte Senderzahlen und Kundenbewertungen werden nicht erfunden.
 
 Die private Vorschau verwendet absichtlich `noindex`. Betreiberidentität, Rechte und Vertragsbedingungen müssen vor dem öffentlichen Geschäftsbetrieb vollständig sein. Einzelheiten und die Reihenfolge der Suchmaschinenfreigabe stehen in der Startcheckliste.
 

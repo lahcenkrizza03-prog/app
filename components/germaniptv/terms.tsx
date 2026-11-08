@@ -20,7 +20,7 @@ export function Terms() {
     <aside className="draft-notice" aria-label="Stand der Vertragsbedingungen">
       <div>
         <strong>AGB-Entwurf · noch nicht zur Verwendung für entgeltliche Abonnements freigegeben</strong>
-        <p>Diese Fassung beschreibt das bestehende Informations- und Anfrageangebot und die vor einer Buchung zu klärenden Bedingungen. Zahlungsweise, Umsatzsteuerbehandlung, Aktivierung, Verlängerung und der konkrete lizenzierte Leistungsumfang sind noch nicht festgelegt. Dieser Entwurf wird nicht als vereinbarte Abo-AGB verwendet.</p>
+        <p>Diese Fassung enthält die bestätigten Preise, Zahlungsarten und Laufzeitregeln. Der konkrete lizenzierte Leistungsumfang und die dazu passenden vollständigen Widerrufsinformationen müssen noch ergänzt werden. Bis dahin wird dieser Entwurf nicht als vereinbarte Abo-AGB verwendet.</p>
       </div>
     </aside>
     <p>Stand: <time dateTime={business.contentUpdated}>{new Intl.DateTimeFormat('de-DE', { timeZone: 'UTC' }).format(new Date(`${business.contentUpdated}T12:00:00Z`))}</time> · Vertragssprache: Deutsch</p>
@@ -31,7 +31,7 @@ export function Terms() {
 
     <section id="agb-anbieter">
       <h2>1. Anbieter und Geltungsbereich</h2>
-      <p>Das Informations- und Anfrageangebot GermanIPTV richtet sich an Verbraucherinnen und Verbraucher in Deutschland. Als Anbieterin ist benannt:</p>
+      <p>Das Informations- und Anfrageangebot upip-tv.com richtet sich an Verbraucherinnen und Verbraucher in Deutschland. Als Anbieterin ist benannt:</p>
       <address style={{ fontStyle: 'normal' }}>
         {business.company.legalName}<br />{business.company.address}<br />
         E-Mail: <a href={`mailto:${business.company.email}`}>{business.company.email}</a><br />
@@ -48,7 +48,7 @@ export function Terms() {
 
     <section id="agb-leistung">
       <h2>3. Leistungsumfang und Inhalte</h2>
-      <p>Die Informationen zu IPTV, Geräten und Bildqualität dienen der Orientierung. Eine verbindliche Senderliste oder ein bestätigter GermanIPTV-Abo-Katalog liegt derzeit nicht vor. Konkrete Sender, Filme, Serien, Sportereignisse, Sprachen, Auflösungen, Empfangsgebiete und Nutzungsrechte müssen vor einer Buchung im Angebot benannt werden.</p>
+      <p>Die Informationen zu IPTV, Geräten und Bildqualität dienen der Orientierung. Eine verbindliche Senderliste oder ein bestätigter upip-tv.com-Abo-Katalog liegt derzeit nicht vor. Konkrete Sender, Filme, Serien, Sportereignisse, Sprachen, Auflösungen, Empfangsgebiete und Nutzungsrechte müssen vor einer Buchung im Angebot benannt werden.</p>
       <p>Die gezeigten Open Movies sind redaktionelle Empfehlungen mit Quellen- und Lizenzangaben. Sie sind keine Zusage, dass diese Titel in einem Abonnement enthalten sind. Es wird kein Anspruch auf ungeprüfte Kanalzahlen, bestimmte Sport- oder PPV-Rechte oder einen bestimmten Veröffentlichungsplan zugesichert.</p>
     </section>
 
@@ -60,8 +60,8 @@ export function Terms() {
         <thead><tr><th scope="col">Laufzeit</th><th scope="col">Gesamtpreis</th><th scope="col">Rechnerisch pro Monat</th></tr></thead>
         <tbody>{plans.map(plan => <tr key={plan.months}><th scope="row">{planDuration(plan.months)}</th><td>{money(plan.cents)}</td><td>{money(plan.cents / plan.months)}</td></tr>)}</tbody>
       </table></div>
-      <p>Der Monatswert ist eine gerundete Rechenhilfe und keine Zusage monatlicher Ratenzahlung. Die Umsatzsteuerbehandlung ist noch zu bestätigen; es wird weder eine enthaltene Umsatzsteuer noch eine Kleinunternehmerregelung unterstellt.</p>
-      <p>Akzeptierte Zahlungsmethoden, Fälligkeit und etwaige zusätzliche Kosten sind noch nicht festgelegt. Vor einer Zahlung müssen der verbindliche Gesamtpreis einschließlich aller anfallenden Steuern und Kosten sowie die Zahlungsbedingungen feststehen. Die Website erhebt selbst keine Zahlungen. Einzelheiten der Darstellung findest du auf der <a href="/preise#bedingungen">Preisseite</a>.</p>
+      <p>Alle genannten Gesamtpreise enthalten Umsatzsteuer. Der Monatswert ist eine gerundete Rechenhilfe und keine Zusage monatlicher Ratenzahlung.</p>
+      <p>Akzeptiert werden {new Intl.ListFormat('de-DE', { type: 'conjunction' }).format(business.terms.paymentMethods)}. Die Zahlungsabwicklung wird dir vor der Buchung mitgeteilt; diese Website hat keinen eigenen Online-Checkout. Vor einer Zahlung müssen der vollständige Leistungsumfang, der verbindliche Gesamtpreis und die Zahlungsbedingungen feststehen. Zusätzliche Kosten müssen vorab offengelegt werden. Einzelheiten der Darstellung findest du auf der <a href="/preise#bedingungen">Preisseite</a>.</p>
     </section>
 
     <section id="agb-technik">
@@ -72,8 +72,8 @@ export function Terms() {
 
     <section id="agb-laufzeit">
       <h2>6. Beginn, Laufzeit und Kündigung</h2>
-      <p>Zur Anfrage stehen ausschließlich ein, drei, sechs oder zwölf Monate. Ein 24-Monats-Plan wird nicht angeboten. Ein Aktivierungszeitpunkt oder eine Aktivierungsfrist nach Zahlung ist noch nicht zugesagt.</p>
-      <p>Ob ein Zugang automatisch endet oder sich verlängert, ist noch nicht festgelegt. Auch Kündigungsfrist und Kündigungsweg müssen vor einem Vertrag eindeutig mitgeteilt werden. Die Wahl einer Anfrage-Laufzeit bestätigt für sich genommen keine Verlängerungsregel.</p>
+      <p>Zur Anfrage stehen ausschließlich ein, drei, sechs oder zwölf Monate. Ein 24-Monats-Plan wird nicht angeboten. Die Aktivierung erfolgt nach Zahlungseingang. Der konkrete Aktivierungstermin sowie Beginn und Ende deiner Laufzeit werden vor der Buchung bestätigt.</p>
+      <p>Der Zugang endet nach der gebuchten Laufzeit automatisch. Eine Kündigung zum regulären Laufzeitende ist nicht erforderlich. Es gibt keine automatische Verlängerung und keine automatische Folgeabbuchung. Wenn du den Zugang fortsetzen möchtest, ist eine neue Bestellung erforderlich. Gesetzliche Rechte zur vorzeitigen Vertragsbeendigung bleiben unberührt.</p>
       <p>Diese Website verwaltet derzeit keine Vertragsbestände und bestätigt keine Kündigungen. Bei einem bestehenden Vertrag gelten die dort vereinbarten Bedingungen und die gesetzlichen Rechte. Informationen zum aktuellen Kontaktweg stehen unter <a href="/kuendigung">Kündigung</a>.</p>
     </section>
 
@@ -117,9 +117,7 @@ export function Terms() {
       <h2>Vor der Verwendung als Abo-AGB zu bestätigen</h2>
       <ul>
         <li>Konkrete lizenzierte Leistung und Freigabe für Deutschland</li>
-        <li>Steuerlicher Status, verbindliche Gesamtpreise, Zahlungsarten und Fälligkeit</li>
-        <li>Aktivierungsfrist, Beginn und Ende des Zugangs</li>
-        <li>Automatisches Ende oder Verlängerung sowie Kündigungsbedingungen</li>
+        <li>Konkrete Zahlungsabwicklung und Aktivierungsfrist für das tatsächliche Angebot</li>
         <li>Passende Widerrufsinformationen, Vertragsbestätigung und erforderliche Schlichtungsangaben</li>
       </ul>
       <p>Nach Festlegung dieser Angaben muss die Vertragsfassung auf das tatsächliche Geschäftsmodell abgestimmt und vor ihrem Einsatz rechtlich geprüft werden.</p>

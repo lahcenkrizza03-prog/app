@@ -20,7 +20,7 @@ fs.symlinkSync(path.join(root, 'node_modules'), path.join(checkout, 'node_module
 // The dynamic route's streamed notFound() can retain status 200 in this Vinext
 // release. Export the shared error design through a build-only concrete route.
 fs.mkdirSync(path.join(checkout, 'app/404'), { recursive: true });
-fs.writeFileSync(path.join(checkout, 'app/404/page.tsx'), `export { default } from '../not-found';\nexport const metadata = { title: 'Seite nicht gefunden | GermanIPTV', robots: { index: false, follow: true } };\n`);
+fs.writeFileSync(path.join(checkout, 'app/404/page.tsx'), `export { default } from '../not-found';\nexport const metadata = { title: 'Seite nicht gefunden | upip-tv.com', robots: { index: false, follow: true } };\n`);
 const env = { ...process.env, NODE_ENV: 'production', NEXT_PUBLIC_STATIC_EXPORT: '1', NEXT_PUBLIC_SITE_URL: siteUrl };
 console.log(`Building a static website for ${siteUrl}`);
 const build = spawnSync(process.execPath, [path.join(root, 'node_modules/vite/bin/vite.js'), 'build', '--config', path.join(checkout, 'vite.porkbun.config.ts')], { cwd: checkout, env, stdio: 'inherit', windowsHide: true });

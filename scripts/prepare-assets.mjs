@@ -8,7 +8,7 @@ await fs.mkdir(new URL('assets-source/', root), { recursive: true });
 try { await fs.copyFile(new URL('public/images/hero-original.png', root), source); await fs.unlink(new URL('public/images/hero-original.png', root)); } catch (e) { if (e.code !== 'ENOENT') throw e; }
 for (const width of [960,1680]) await sharp(fileURLToPath(source)).resize({ width }).avif({ quality: 52, effort: 6 }).toFile(fileURLToPath(new URL(`hero-${width}.avif`, images)));
 await sharp(fileURLToPath(source)).resize({ width: 1680 }).webp({ quality: 80 }).toFile(fileURLToPath(new URL('hero.webp', images)));
-await sharp(fileURLToPath(source)).resize(1200, 630, { fit: 'cover' }).composite([{ input: Buffer.from('<svg width="1200" height="630"><rect width="680" height="630" fill="#070711" fill-opacity=".72"/><text x="70" y="270" fill="white" font-family="Arial" font-size="68" font-weight="700">German<tspan fill="#ab60ff">IPTV</tspan></text><text x="73" y="330" fill="#d9cfea" font-family="Arial" font-size="26">Entertainment für Deutschland.</text></svg>') }]).webp({ quality: 85 }).toFile(fileURLToPath(new URL('og.webp', images)));
+await sharp(fileURLToPath(source)).resize(1200, 630, { fit: 'cover' }).composite([{ input: Buffer.from('<svg width="1200" height="630"><rect width="680" height="630" fill="#070711" fill-opacity=".72"/><text x="70" y="270" fill="white" font-family="Arial" font-size="68" font-weight="700">upip<tspan fill="#ab60ff">-tv.com</tspan></text><text x="73" y="330" fill="#d9cfea" font-family="Arial" font-size="26">Entertainment für Deutschland.</text></svg>') }]).webp({ quality: 85 }).toFile(fileURLToPath(new URL('og-upip-tv.webp', images)));
 const ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
 const germanCharacters = Array.from({ length: 95 }, (_, i) => String.fromCharCode(32 + i)).join('') + 'ÄÖÜäöüßẞ€©–—„“‚‘’…→×²³°';
 const css = await fetch('https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=optional&text=' + encodeURIComponent(germanCharacters), { headers: { 'User-Agent': ua } }).then(r => r.text());
@@ -21,7 +21,7 @@ const license = await fetch('https://raw.githubusercontent.com/rsms/inter/master
 await fs.writeFile(new URL('public/fonts/OFL.txt', root), license);
 console.log('Prepared AVIF, WebP, social image, and self-hosted Inter font.');
 for (const file of await fs.readdir(images)) {
-  if (!file.endsWith('.webp') || file.startsWith('hero') || file === 'og.webp') continue;
+  if (!file.endsWith('.webp') || file.startsWith('hero') || file === 'og-upip-tv.webp') continue;
   for (const width of [240, 420]) {
     await sharp(fileURLToPath(new URL(file, images))).resize(width, Math.round(width * 1.5), { fit: 'cover' }).avif({ quality: 48, effort: 5 }).toFile(fileURLToPath(new URL(file.replace('.webp', `-${width}.avif`), images)));
   }
