@@ -25,3 +25,40 @@ dialog{padding:0;max-width:850px;width:calc(100% - 40px);border:1px solid #61428
 .poster-button>picture{display:block;width:100%;height:100%}
 
 .page-agb h1{overflow-wrap:anywhere;hyphens:auto}
+
+.hero h1 .hero-brand-line{display:block;font-size:.3em;line-height:1.5;font-weight:600;letter-spacing:.02em;color:#d8c5ee;margin-top:14px}
+.iptv-explained{border-block:1px solid var(--border);padding-block:48px}
+.comparison-intro{max-width:710px}
+.comparison-intro h2{font-size:clamp(25px,3vw,35px);line-height:1.2;letter-spacing:-.03em;margin:12px 0 16px}
+.comparison-intro>p{font-size:16px;line-height:1.75;color:#c8c2d2}
+.explainer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:32px}
+.explainer-number{color:#b88bed;font-size:13px;font-weight:700}
+.explainer-grid h3{font-size:19px;line-height:1.35;margin:12px 0}
+.explainer-grid p{color:#c8c2d2;font-size:15px;line-height:1.75;margin-bottom:18px}
+.explainer-grid .inline-link{font-size:14px;line-height:1.6}
+.explainer-source{color:#b9b1c4;font-size:13px;line-height:1.8;max-width:920px;margin:30px 0 0}
+.explainer-source a{text-decoration:underline;text-underline-offset:3px}
+.table-scroll:focus-visible{outline:2px solid #bf93f5;outline-offset:5px}
+@media(max-width:760px){.explainer-grid{grid-template-columns:1fr;gap:26px}.explainer-grid article{border-top:1px solid var(--border);padding-top:20px}.iptv-explained{padding-block:32px}.comparison-intro>p,.explainer-grid p{font-size:15px}.hero h1 .hero-brand-line{font-size:.36em}}
+
+/* Keep the visual price order consistent with keyboard and reading order. */
+@media(max-width:760px){.price-card.featured{order:initial}}
+@media(max-width:600px){
+ .price-grid{grid-template-columns:1fr;gap:24px}
+ .price-card,.price-card.featured{padding:26px 24px}
+ .plan-duration{font-size:24px}.plan-top svg{width:24px}
+ .plan-tagline{font-size:13px;line-height:1.6;margin-bottom:18px}
+ .plan-price{font-size:38px}.plan-price>span{font-size:12px}
+ .monthly{font-size:13px;line-height:1.6}.device-limit{font-size:14px}
+ .plan-features{font-size:14px;line-height:1.6;gap:12px}
+ .plan-features svg{width:16px}.plan-button{font-size:15px;min-height:48px}
+ .inquiry-label{font-size:11px;line-height:1.6}.best-badge{font-size:10px;padding:5px 12px}
+ .price-disclosure{font-size:12px;line-height:1.8}
+ .hero-content>p{font-size:14px;line-height:1.6}.hero-content>p.hero-note{font-size:11px}
+ .hero-benefits{font-size:10px;flex-wrap:wrap}.hero-cta{font-size:13px;min-height:44px}
+ .trailer-button{font-size:11px}.market-badge{font-size:10px}
+ .features h3{font-size:13px}.feature p{font-size:12px;line-height:1.7}
+ .steps-grid h3{font-size:16px}.steps-grid p{font-size:14px;line-height:1.7}
+ .review-empty h2{font-size:17px}.review-empty p{font-size:13px;line-height:1.6}
+ .faq-section p,.accordion summary,.accordion details p{font-size:14px;line-height:1.7}
+}

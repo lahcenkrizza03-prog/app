@@ -45,7 +45,7 @@ Die Browserprüfungen verwenden das vorhandene Chrome unter `C:/Program Files/Go
 | scripts/indexnow.mjs | Eigentumsdatei vorbereiten und freigegebene Änderungen melden |
 | .openai/hosting.json | Site-Identität und Hostingkonfiguration |
 
-Eine Preisänderung erfolgt nur in der Tarifliste; Gesamtpreise und Monatswerte werden in allen Ansichten daraus abgeleitet. 12 und 24 Monate behalten die vorgegebenen Gesamtsummen und den gleich gerundeten Monatswert. Der Anfragekontakt bleibt +212 781 003 018 und wird nicht als deutsche Nummer dargestellt.
+Eine Preisänderung erfolgt nur in der Tarifliste; Gesamtpreise und Monatswerte werden in allen Ansichten daraus abgeleitet. Aktuell freigegeben sind 1 / 3 / 6 / 12 Monate für 12 / 29 / 45 / 59 EUR inklusive Umsatzsteuer. Der internationale Anfragekontakt ist +1 (231) 335-4123; er wird nicht als deutsche Ortsnummer dargestellt.
 
 Ein Redaktions-CMS, eine Anmeldung und ein Adminportal wurden nicht vorgetäuscht: Es gab keinen vorhandenen Backend- oder Authentifizierungsdienst. Die zentrale Dateikonfiguration ist der aktuelle Pflegeweg. Für ein späteres Adminsystem sind echte Identitätsprüfung, Rollen, Änderungsprotokolle, serverseitige Validierung und persistente Speicherung erforderlich.
 

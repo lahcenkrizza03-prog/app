@@ -12,7 +12,7 @@ try {
     await fs.writeFile(`outputs/lighthouse-${name}.json`,result.report[1]);
     const l=result.lhr; const scores=Object.fromEntries(Object.entries(l.categories).map(([k,v])=>[k,Math.round(v.score*100)]));
     const metrics=Object.fromEntries(['first-contentful-paint','largest-contentful-paint','total-blocking-time','cumulative-layout-shift','speed-index'].map(k=>[k,l.audits[k].displayValue]));
-    const failed=Object.entries(l.audits).filter(([k,v])=>v.score!==null&&v.score<.9&&v.details).map(([id,v])=>({id,title:v.title,description:v.description}));
+    const failed=Object.entries(l.audits).filter(([,v])=>v.score!==null&&v.score<.9&&v.details).map(([id,v])=>({id,title:v.title,description:v.description}));
     results.push({name,scores,metrics,failed});console.log(JSON.stringify({name,scores,metrics}));
   }
   await fs.writeFile('outputs/performance-summary.json',JSON.stringify(results,null,2));

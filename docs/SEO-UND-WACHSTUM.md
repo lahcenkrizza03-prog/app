@@ -1,3 +1,5 @@
+> Current review, 10 November 2026: see [SEO-REVIEW-2026-11-10.md](SEO-REVIEW-2026-11-10.md). The site is live and all 14 public canonical pages were confirmed indexed. The approved plans are 1 / 3 / 6 / 12 months at 12 / 29 / 45 / 59 EUR; the contact is +1 (231) 335-4123. Older parking, noindex and pricing observations below are historical. Checkout and five legal drafts remain gated separately.
+
 # upip-tv.com: SEO für IPTV-Pläne und Preise
 
 Stand: 9. November 2026. Ziel: relevante Suchanfragen aus Deutschland und qualifizierte Plananfragen. Ein bestimmter Google-Rang wird nicht zugesagt.

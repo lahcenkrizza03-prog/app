@@ -1,3 +1,4 @@
+import { sitePath } from '@/config/business';
 import { business, money, planDuration, plans, whatsappLink, activationInformation, refundInformation } from '@/config/business';
 
 const chapters = [
@@ -38,7 +39,7 @@ export function Terms() {
         WhatsApp: <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">{business.whatsappDisplay}</a>
       </address>
       <p>{business.company.legalName} tritt für upip-tv.com als direkte IPTV-Anbieterin auf. Die hier veröffentlichten Angaben zu ihrem Dienst beruhen auf ihren eigenen Informationen.</p>
-      <p>Weitere Anbieterangaben stehen im <a href="/impressum">Impressum</a>. Die Nutzung der Informationsseiten ist kostenfrei. Ein entgeltlicher Streamingzugang wird durch den Besuch der Website nicht eingerichtet.</p>
+      <p>Weitere Anbieterangaben stehen im <a href={sitePath('/impressum')}>Impressum</a>. Die Nutzung der Informationsseiten ist kostenfrei. Ein entgeltlicher Streamingzugang wird durch den Besuch der Website nicht eingerichtet.</p>
     </section>
 
     <section id="agb-anfrage">
@@ -64,20 +65,20 @@ export function Terms() {
         <tbody>{plans.map(plan => <tr key={plan.months}><th scope="row">{planDuration(plan.months)}</th><td>{money(plan.cents)}</td><td>{money(plan.cents / plan.months)}</td></tr>)}</tbody>
       </table></div>
       <p>Alle genannten Gesamtpreise enthalten Umsatzsteuer. Der Monatswert ist eine gerundete Rechenhilfe und keine Zusage monatlicher Ratenzahlung.</p>
-      <p>Akzeptiert werden {new Intl.ListFormat('de-DE', { type: 'conjunction' }).format(business.terms.paymentMethods)}. Die Zahlungsabwicklung wird dir vor der Buchung mitgeteilt; diese Website hat keinen eigenen Online-Checkout. Vor einer Zahlung müssen der vollständige Leistungsumfang, der verbindliche Gesamtpreis und die Zahlungsbedingungen feststehen. Zusätzliche Kosten müssen vorab offengelegt werden. Einzelheiten der Darstellung findest du auf der <a href="/preise#bedingungen">Preisseite</a>.</p>
+      <p>Akzeptiert werden {new Intl.ListFormat('de-DE', { type: 'conjunction' }).format(business.terms.paymentMethods)}. Die Zahlungsabwicklung wird dir vor der Buchung mitgeteilt; diese Website hat keinen eigenen Online-Checkout. Vor einer Zahlung müssen der vollständige Leistungsumfang, der verbindliche Gesamtpreis und die Zahlungsbedingungen feststehen. Zusätzliche Kosten müssen vorab offengelegt werden. Einzelheiten der Darstellung findest du auf der <a href={sitePath('/preise#bedingungen')}>Preisseite</a>.</p>
     </section>
 
     <section id="agb-technik">
       <h2>5. Geräte und technische Voraussetzungen</h2>
       <p>Ob ein Gerät geeignet ist, hängt unter anderem von Modell, Betriebssystem, App und Internetverbindung ab. Allgemeine Gerätehinweise ersetzen keine Freigabe für ein bestimmtes Angebot. Erforderliche Apps, deren mögliche Kosten, unterstützte Systeme und notwendige Verbindungseigenschaften müssen vor der Buchung geklärt werden.</p>
-      <p>Ein 4K-fähiges Gerät allein ist keine Zusage von 4K-Inhalten. Verfügbare Qualitätsstufen und technische Beschränkungen müssen zum konkreten Leistungsumfang passen. Nutze die <a href="/geraete">Geräteanfrage</a>, um dein Modell vorab prüfen zu lassen.</p>
+      <p>Ein 4K-fähiges Gerät allein ist keine Zusage von 4K-Inhalten. Verfügbare Qualitätsstufen und technische Beschränkungen müssen zum konkreten Leistungsumfang passen. Nutze die <a href={sitePath('/geraete')}>Geräteanfrage</a>, um dein Modell vorab prüfen zu lassen.</p>
     </section>
 
     <section id="agb-laufzeit">
       <h2>6. Beginn, Laufzeit und Kündigung</h2>
       <p>Zur Anfrage stehen ausschließlich ein, drei, sechs oder zwölf Monate. Ein 24-Monats-Plan wird nicht angeboten. {activationInformation()} Die gebuchte Laufzeit beginnt mit der Aktivierung des Zugangs. Beginn und Ende deiner Laufzeit werden vor der Buchung mitgeteilt.</p>
       <p>Der Zugang endet nach der gebuchten Laufzeit automatisch. Eine Kündigung zum regulären Laufzeitende ist nicht erforderlich. Es gibt keine automatische Verlängerung und keine automatische Folgeabbuchung. Wenn du den Zugang fortsetzen möchtest, ist eine neue Bestellung erforderlich. Gesetzliche Rechte zur vorzeitigen Vertragsbeendigung bleiben unberührt.</p>
-      <p>Diese Website verwaltet derzeit keine Vertragsbestände und bestätigt keine Kündigungen. Bei einem bestehenden Vertrag gelten die dort vereinbarten Bedingungen und die gesetzlichen Rechte. Informationen zum aktuellen Kontaktweg stehen unter <a href="/kuendigung">Kündigung</a>.</p>
+      <p>Diese Website verwaltet derzeit keine Vertragsbestände und bestätigt keine Kündigungen. Bei einem bestehenden Vertrag gelten die dort vereinbarten Bedingungen und die gesetzlichen Rechte. Informationen zum aktuellen Kontaktweg stehen unter <a href={sitePath('/kuendigung')}>Kündigung</a>.</p>
     </section>
 
     <section id="agb-nutzung">
@@ -99,7 +100,7 @@ export function Terms() {
       <p>Gesetzliche Widerrufs- und Mängelrechte bleiben von dieser zusätzlichen Erstattungsmöglichkeit unberührt.</p>
       <h3>Gesetzlicher Widerruf</h3>
       <p>Eine unverbindliche Anfrage ist kein entgeltlicher Vertrag. Vor einem späteren Fernabsatzvertrag müssen dir die für das konkrete Produkt geltenden Widerrufsinformationen und gegebenenfalls ein Muster-Widerrufsformular bereitgestellt werden.</p>
-      <p>Ein Klick auf einen WhatsApp-Link oder eine Anfrage lässt ein gesetzliches Widerrufsrecht nicht entfallen. Die Voraussetzungen für einen vorzeitigen Leistungsbeginn und ein mögliches Erlöschen hängen von der konkreten Leistung und den gesetzlichen Anforderungen ab. Die Seite <a href="/widerruf">Widerruf</a> beschreibt den aktuellen Vorbereitungsstand; sie ist noch keine vollständige Belehrung für ein konkretes Abonnement.</p>
+      <p>Ein Klick auf einen WhatsApp-Link oder eine Anfrage lässt ein gesetzliches Widerrufsrecht nicht entfallen. Die Voraussetzungen für einen vorzeitigen Leistungsbeginn und ein mögliches Erlöschen hängen von der konkreten Leistung und den gesetzlichen Anforderungen ab. Die Seite <a href={sitePath('/widerruf')}>Widerruf</a> beschreibt den aktuellen Vorbereitungsstand; sie ist noch keine vollständige Belehrung für ein konkretes Abonnement.</p>
     </section>
 
     <section id="agb-haftung">
@@ -110,7 +111,7 @@ export function Terms() {
     <section id="agb-datenschutz">
       <h2>11. Datenschutz und Kommunikation</h2>
       <p>Das Kontaktformular versendet oder speichert deine Nachricht nicht auf einem Server dieser Website. Es bereitet einen WhatsApp-Link vor; das Absenden erfolgt durch dich bei WhatsApp. Du kannst stattdessen per E-Mail Kontakt aufnehmen. Für externe Dienste gelten deren eigene Datenschutzinformationen.</p>
-      <p>Informationen zu Hosting, Kontaktwegen und lokalen Datenschutzeinstellungen findest du unter <a href="/datenschutz">Datenschutz</a>. Der dort kenntlich gemachte Ergänzungsbedarf bleibt bestehen.</p>
+      <p>Informationen zu Hosting, Kontaktwegen und lokalen Datenschutzeinstellungen findest du unter <a href={sitePath('/datenschutz')}>Datenschutz</a>. Der dort kenntlich gemachte Ergänzungsbedarf bleibt bestehen.</p>
     </section>
 
     <section id="agb-schluss">

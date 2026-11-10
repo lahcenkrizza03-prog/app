@@ -16,7 +16,7 @@ test('monthly values use German EUR formatting and actual division', () => {
   assert.deepEqual(plans.map(p => money(p.cents / p.months).replace(/\s/g, '')), ['12,00€','9,67€','7,50€','4,92€']);
 });
 test('each WhatsApp link has the correct number and exact German plan inquiry', () => {
-  for (const p of plans) { const link = new URL(whatsappLink(planMessage(p.months))); assert.equal(link.origin, 'https://wa.me'); assert.equal(link.pathname, '/6282314082948'); assert.equal(link.searchParams.get('text'), `Ich möchte den upip-tv.com 1 Gerät ${p.months} ${p.months === 1 ? 'Monat' : 'Monate'} Plan anfragen.`); }
+  for (const p of plans) { const link = new URL(whatsappLink(planMessage(p.months))); assert.equal(link.origin, 'https://wa.me'); assert.equal(link.pathname, '/12313354123'); assert.equal(link.searchParams.get('text'), `Ich möchte den upip-tv.com 1 Gerät ${p.months} ${p.months === 1 ? 'Monat' : 'Monate'} Plan anfragen.`); }
 });
 test('catalog has provenance, unique ids, local artwork and no unverified streaming claims', () => {
   assert.equal(new Set(catalog.map(t => t.id)).size, catalog.length);
@@ -52,7 +52,7 @@ test('guides have distinct content and primary sources', () => {
   for (const a of articles) { assert.ok(a.sections.length >= 4); assert.ok(a.source.startsWith('https://')); }
 });
 test('the Porkbun profile uses its own origin and directory canonicals without changing launch approval', () => {
-  const result = spawnSync(process.execPath, ['--input-type=module', '-e', "const {business,pageUrl}=await import('./config/business.ts');console.log(JSON.stringify({home:pageUrl('/'),prices:pageUrl('/preise'),ready:business.publicLaunchReady}));"], { cwd: new URL('../', import.meta.url), env: { ...process.env, NEXT_PUBLIC_STATIC_EXPORT: '1', NEXT_PUBLIC_SITE_URL: 'https://upip-tv.com' }, encoding: 'utf8' });
+  const result = spawnSync(process.execPath, ['--experimental-strip-types', '--input-type=module', '-e', "const {business,pageUrl,sitePath}=await import('./config/business.ts');console.log(JSON.stringify({home:pageUrl('/'),prices:pageUrl('/preise'),ready:business.publicLaunchReady,links:['/preise','/preise/','/preise?source=test#bedingungen','/filme#verfuegbarkeit','/sitemap.xml','/'].map(sitePath)}));"], { cwd: new URL('../', import.meta.url), env: { ...process.env, NEXT_PUBLIC_STATIC_EXPORT: '1', NEXT_PUBLIC_SITE_URL: 'https://upip-tv.com' }, encoding: 'utf8' });
   assert.equal(result.status, 0, result.stderr);
-  assert.deepEqual(JSON.parse(result.stdout), { home: 'https://upip-tv.com/', prices: 'https://upip-tv.com/preise/', ready: false });
+  assert.deepEqual(JSON.parse(result.stdout), { home: 'https://upip-tv.com/', prices: 'https://upip-tv.com/preise/', ready: false, links: ['/preise/', '/preise/', '/preise/?source=test#bedingungen', '/filme/#verfuegbarkeit', '/sitemap.xml', '/'] });
 });

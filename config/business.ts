@@ -4,8 +4,8 @@ export const business = {
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://upip-tv.com',
   locale: 'de-DE',
   currency: 'EUR',
-  whatsapp: '6282314082948',
-  whatsappDisplay: '+62 823-1408-2948',
+  whatsapp: '12313354123',
+  whatsappDisplay: '+1 (231) 335-4123',
   publicLaunchReady: false,
   analyticsId: '',
   company: { legalName: 'Anna Müller', address: 'Platz der Republik 1, 11011 Berlin, Deutschland', email: 'annamuller@web.de', vatId: '' },
@@ -16,7 +16,7 @@ export const business = {
     periodStart: 'activation', replacementDeviceAllowed: true,
     refundAvailability: 'anytime', refundAmount: 'full', refundProcessingDays: 1, refundAccessEnd: 'completed',
   },
-  contentUpdated: '2026-11-08',
+  contentUpdated: '2026-11-10',
   verifiedServiceFeatures: [] as string[],
   unverifiedClaims: ['20.000+ Live-Kanäle', '60.000+ Filme & Serien', 'Sport & PPV', 'Anti-Freeze Technologie', 'WhatsApp Support'],
 };
@@ -46,9 +46,13 @@ export function planMonthsList(type: 'conjunction' | 'disjunction' = 'conjunctio
 export function planPricesList() {
   return new Intl.ListFormat('de-DE', { style: 'long', type: 'conjunction' }).format(plans.map(p => money(p.cents)));
 }
+export function sitePath(path: string) {
+  const [, pathname, tail = ''] = path.match(/^([^?#]*)(.*)$/)!;
+  if (!isStaticExport || pathname === '/' || /\.[a-z0-9]+$/i.test(pathname)) return path;
+  return `${pathname.replace(/\/$/, '')}/${tail}`;
+}
 export function pageUrl(path: string) {
-  const suffix = path === '/' ? (isStaticExport ? '/' : '') : isStaticExport && !/\.[a-z0-9]+$/i.test(path) ? `${path.replace(/\/$/, '')}/` : path;
-  return `${business.url}${suffix}`;
+  return `${business.url}${path === '/' && !isStaticExport ? '' : sitePath(path)}`;
 }
 export function planMessage(months: number) {
   return `Ich möchte den upip-tv.com 1 Gerät ${planDuration(months)} Plan anfragen.`;
