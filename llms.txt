@@ -5,7 +5,7 @@
 Status: Vorbereitungsphase. Keine bestätigte Senderliste, kein Online-Checkout, keine verifizierte Abo-Verfügbarkeit. Open Movies sind redaktionelle Entdeckungen mit Quellenangaben.
 
 - [Preise](https://upip-tv.com/preise/): 1, 3, 6 und 12 Monate; ein Gerät/ein Login; unverbindliche Anfragen.
-- [FAQ](https://upip-tv.com/faq/)
+- [Installationsanleitung](https://upip-tv.com/installationsanleitung/)
 - [Geräte](https://upip-tv.com/geraete/)
 - [Kontakt](https://upip-tv.com/kontakt/)
 - [Anbieterangaben](https://upip-tv.com/impressum/)
