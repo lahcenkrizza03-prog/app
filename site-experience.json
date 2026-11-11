@@ -1,0 +1,18 @@
+{
+  "brand": "upip-tv.com",
+  "domain": "upip-tv.com",
+  "language": "de",
+  "languages": [
+    "en",
+    "fr",
+    "de",
+    "es",
+    "nl"
+  ],
+  "whatsapp": "12313354123",
+  "accent": "#9f85ff",
+  "accentInk": "#101522",
+  "version": "20261111",
+  "headerSelector": "header",
+  "headerRowSelector": ".header-inner,.navigation,.nav-inner"
+}
