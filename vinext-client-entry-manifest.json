@@ -4,17 +4,25 @@
   "appRouteManifest": "_next/static/chunks/DPmBXA2B.js",
   "appClientReferenceChunks": {
     "references": {
-      "1697f05726af": 0,
-      "aa7f0c7bab4d": 1,
-      "ce46c7512ef9": 2,
-      "256dff480a84": 2,
-      "f770e1b848d9": 2,
-      "45dc6c57fe5c": 2,
+      "ce46c7512ef9": 0,
+      "256dff480a84": 0,
+      "f770e1b848d9": 0,
+      "45dc6c57fe5c": 0,
+      "1697f05726af": 1,
+      "aa7f0c7bab4d": 2,
       "e5bebc510e04": 3,
       "06f55b461cdd": 4,
       "a95244d56b8f": 4
     },
     "modules": [
+      {
+        "file": "_next/static/chunks/BC_mU1aU.js",
+        "imports": [
+          "_next/static/chunks/Dih6TnEN.js",
+          "_next/static/chunks/CiTii--i.js"
+        ],
+        "css": []
+      },
       {
         "file": "_next/static/chunks/CVKfa806.js",
         "imports": [
@@ -26,14 +34,6 @@
       {
         "file": "_next/static/chunks/CtjGxLcW.js",
         "imports": [],
-        "css": []
-      },
-      {
-        "file": "_next/static/chunks/CwDOkhwj.js",
-        "imports": [
-          "_next/static/chunks/Dih6TnEN.js",
-          "_next/static/chunks/CiTii--i.js"
-        ],
         "css": []
       },
       {
