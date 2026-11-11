@@ -3,7 +3,8 @@
 export const searchIndexingEnabled = process.env.NEXT_PUBLIC_SEARCH_INDEXING === '1';
 
 export const indexablePaths = [
-  '/', '/tv-kanaele', '/filme', '/serien', '/preise', '/geraete', '/faq',
+  '/', '/tv-kanaele', '/filme', '/serien', '/preise', '/geraete',
+  '/installationsanleitung', '/blog', '/verlaengern', '/reseller',
   '/ueber-uns', '/kontakt', '/ratgeber', '/ratgeber/was-ist-iptv',
   '/ratgeber/iptv-smart-tv-checkliste', '/ratgeber/iptv-anbieter-pruefen', '/ratgeber/iptv-kosten-laufzeiten',
 ] as const;

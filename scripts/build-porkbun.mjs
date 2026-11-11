@@ -51,7 +51,7 @@ const directory = fs.mkdtempSync(path.join(outputs, `porkbun-${origin.hostname}-
 fs.cpSync(client, directory, { recursive: true, filter: (entry) => !entry.endsWith('.map') && path.basename(entry) !== '.vite' });
 fs.writeFileSync(path.join(directory, 'sitemap.xml'), sitemapText(paths.filter(route => shouldIndexPath(route)).map(pageUrl), business.contentUpdated, Object.fromEntries(paths.map(route => [pageUrl(route), contentUpdatedForPath(route)]))));
 fs.writeFileSync(path.join(directory, 'robots.txt'), robotsText(siteUrl));
-fs.writeFileSync(path.join(directory, 'llms.txt'), llmsText(business.name, { prices: pageUrl('/preise'), faq: pageUrl('/faq'), devices: pageUrl('/geraete'), contact: pageUrl('/kontakt'), legal: pageUrl('/impressum') }, planMonthsList()));
+fs.writeFileSync(path.join(directory, 'llms.txt'), llmsText(business.name, { prices: pageUrl('/preise'), installation: pageUrl('/installationsanleitung'), devices: pageUrl('/geraete'), contact: pageUrl('/kontakt'), legal: pageUrl('/impressum') }, planMonthsList()));
 // Apache/cPanel can use these directives. Porkbun Static Hosting serves the
 // directory HTML directly and manages its own response headers and redirects.
 fs.writeFileSync(path.join(directory, '.htaccess'), `DirectoryIndex index.html\nOptions -Indexes -MultiViews\nErrorDocument 404 /404.html\n<IfModule mod_headers.c>\nHeader always set X-Content-Type-Options "nosniff"\nHeader always set Referrer-Policy "strict-origin-when-cross-origin"\n</IfModule>\n`);
