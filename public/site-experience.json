@@ -12,7 +12,7 @@
   "whatsapp": "12313354123",
   "accent": "#9f85ff",
   "accentInk": "#101522",
-  "version": "20261111",
+  "version": "20261112hero",
   "headerSelector": "header",
   "headerRowSelector": ".header-inner,.navigation,.nav-inner"
 }
