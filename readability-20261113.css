@@ -1,0 +1,30 @@
+:root{--bg:#fff;--surface:#f1f5fa;--card:#fff;--purple:#174bb7;--purple-bright:#174bb7;--text:#15233b;--muted:#40516a;--border:#c4d0e0;--experience-accent:#174bb7;--experience-accent-ink:#fff;color-scheme:light}
+body{background:#fff;color:#15233b}body :is(h1,h2,h3){color:#15233b}
+body .site-header,body .main-nav,body .main-nav.is-open,body .experience-sticky:has(#mobile-nav) .main-nav{background:#fff!important;border-color:#c4d0e0}
+body .main-nav a,body .brand,body .brand .purple{color:#15233b!important}body .brand-mark,body .main-nav a.active,body .main-nav a:hover{color:#174bb7!important}
+body .hero{background:#fff}body .hero-overlay{background:linear-gradient(90deg,#fff,#ffffffed)}
+body .hero h1>span,body .hero h1 .hero-brand-line,body .hero h1 .headline-dot{background:none;color:#15233b;-webkit-text-fill-color:#15233b}
+body .hero-content>p,body .hero-presence-copy>p,body .hero-note,body .hero-caption,body .art-label{color:#40516a!important}
+body .button,body .button:hover,body[data-sales-site="upip"] .hero-actions .hero-cta,body .sales-guidance .button{background:#174bb7;color:#fff;border-color:#174bb7;box-shadow:none}
+body .button.outline,body[data-sales-site="upip"] .hero-actions .hero-contact{background:#fff;color:#15233b;border-color:#879bb5}
+body :is(.eyebrow,.inline-link,.inline-link:hover,.purple,.carousel-tools a,.contact-number,.contact-note,.form-privacy a,.prose a,.collections-disclosure>summary){color:#174bb7}
+body :is(.category-nav,.steps-grid article,.review-empty,.closing-cta,.panel,.catalog-notice,.empty-state,.consent-panel,.sales-guidance-card,.sales-refund,.filter-pills button,.search-input,.article-graphic){background:#f1f5fa;color:#15233b}
+body :is(.category-nav>a,.category-nav>a.all-categories,.filter-pills button,.search-input input,.prose td,.prose th,.prose caption,.legal-fields dd,.legal-fields dt,.status-label,.contact-emblem,label,.breadcrumbs,.catalog-intro){color:#283b54}
+body .category-nav a.selected,body .filter-pills button.selected{background:#174bb7;color:#fff;border-color:#174bb7}
+body .category-nav>a:hover{background:#e1eafb;color:#15233b}
+body :is(.plan-tagline,.plan-price>span,.monthly,.monthly strong,.device-limit,.plan-features,.inquiry-label,.price-disclosure,.feature p,.footer-top small,.footer-links,.footer-bottom,.comparison-intro>p,.explainer-grid p,.explainer-source,.sales-guidance p,.sales-guidance-card li>span,.sales-guide-visual figcaption,.sales-decision-notes p,.sales-refund p,.detail-layout p.art-credit,.trailer-preview small){color:#40516a}
+body :is(.plan-top>svg,.device-limit>svg,.plan-features svg,.feature>svg,.step-number,.review-icon,.footer-contact>svg:first-child,.contact-emblem,.sales-refund>svg,.device-grid svg){color:#174bb7}
+body[data-sales-site="upip"] .price-card{background:#fff;color:#15233b;border-color:#a8bcd3}
+body[data-sales-site="upip"] .price-card.featured{background:#7c233f!important;color:#fff!important;border-color:#7c233f!important}
+body[data-sales-site="upip"] .price-card.featured :is(h3,.plan-price,.plan-price>span,.monthly,.monthly strong,.device-limit,.device-limit svg,.plan-features,.plan-features svg,.plan-tagline,.plan-duration,.inquiry-label,.plan-top>svg){color:#fff!important}
+body[data-sales-site="upip"] .price-card.featured .plan-button{background:#fff;color:#7c233f;border-color:#fff}
+body[data-sales-site="upip"] .best-badge{background:#15233b;color:#fff}
+body input:not([type=checkbox]),body select,body textarea{background:#fff;color:#15233b;border-color:#879bb5}body input::placeholder,body textarea::placeholder{color:#53647b;opacity:1}
+body dialog{background:#fff;color:#15233b}body .dialog-close{background:#15233b;color:#fff}
+body .draft-notice{background:#fff1da}body .draft-notice :is(strong,p,svg){color:#5c3718}
+body .detail-layout .detail-availability{background:#edf3ff;color:#283b54}
+body .experience-language-menu{background:#fff;color:#15233b;border-color:#c4d0e0}body .experience-language-menu button[aria-checked=true]{background:#e5edfc}
+body .hero-presence{--hp-panel:#15233b;--hp-accent:#b0ccfa;color:#15233b}body .hero-presence :is(.hp-bar strong,.hp-picture-copy>strong,.hp-tile>span){color:#fff}body .hero-presence :is(.hp-bar>span,.hp-chapters>span){color:#dce8fa}body .hero-presence figcaption,body .hero-presence-note{color:#40516a}
+body .hero-presence .hp-guide{color:#174bb7;border-color:#879bb5}
+body :is(a,button,input,select,textarea):focus-visible{outline:3px solid #b83c16;outline-offset:4px}body .price-card.featured a:focus-visible{outline-color:#fff}
+body .price-disclosure a,body .explainer-number{color:#174bb7}
