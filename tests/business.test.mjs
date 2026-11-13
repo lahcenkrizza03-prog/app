@@ -16,7 +16,7 @@ test('monthly values use German EUR formatting and actual division', () => {
   assert.deepEqual(plans.map(p => money(p.cents / p.months).replace(/\s/g, '')), ['12,00€','9,67€','7,50€','4,92€']);
 });
 test('each WhatsApp link has the correct number and exact German plan inquiry', () => {
-  for (const p of plans) { const link = new URL(whatsappLink(planMessage(p.months))); assert.equal(link.origin, 'https://wa.me'); assert.equal(link.pathname, '/12313354123'); assert.equal(link.searchParams.get('text'), `Ich möchte den upip-tv.com 1 Gerät ${p.months} ${p.months === 1 ? 'Monat' : 'Monate'} Plan anfragen.`); }
+  for (const p of plans) { const link = new URL(whatsappLink(planMessage(p.months))); assert.equal(link.origin, 'https://wa.me'); assert.equal(link.pathname, '/12313354123'); const message = link.searchParams.get('text'); assert.ok(message.includes(`1 Gerät ${p.months} ${p.months === 1 ? 'Monat' : 'Monate'}`)); assert.ok(message.includes(money(p.cents))); assert.ok(message.includes('(EUR)')); assert.ok(message.includes('https://upip-tv.com/')); assert.ok(message.includes(`upip-1-${p.months}`)); }
 });
 test('catalog has provenance, unique ids, local artwork and no unverified streaming claims', () => {
   assert.equal(new Set(catalog.map(t => t.id)).size, catalog.length);
@@ -56,3 +56,6 @@ test('the Porkbun profile uses its own origin and directory canonicals without c
   assert.equal(result.status, 0, result.stderr);
   assert.deepEqual(JSON.parse(result.stdout), { home: 'https://upip-tv.com/', prices: 'https://upip-tv.com/preise/', ready: false, links: ['/preise/', '/preise/', '/preise/?source=test#bedingungen', '/filme/#verfuegbarkeit', '/sitemap.xml', '/'] });
 });
+
+test('invalid term cannot prepare a made-up quote',()=>{assert.throws(()=>planMessage(2),RangeError);});
+test('sales guide preserves genuine prices, an illustrated preparation and FAQ removal',()=>{const article=articles.find(a=>a.slug==='iptv-smart-tv-checkliste');assert.equal(article.updated,'2026-11-13');assert(article.sections.some(([,p])=>p.includes('59,00')));const route=fs.readFileSync(new URL('../app/ratgeber/[article]/page.tsx',import.meta.url),'utf8');assert(!route.includes("sitePath('/faq')"));assert(route.includes('DeviceGuideVisual'));});

@@ -1,0 +1,53 @@
+body[data-sales-site="upip"] .hero h1{font-size:clamp(43px,4.2vw,65px);line-height:1.08;letter-spacing:-.045em;max-width:18ch}
+body[data-sales-site="upip"] .hero-presence-copy>p{font-size:16px;line-height:1.8;max-width:55ch}
+body[data-sales-site="upip"] .hero-benefits{font-size:12px;gap:17px;flex-wrap:wrap}
+body[data-sales-site="upip"] .hero-actions{gap:12px;flex-wrap:wrap}
+body[data-sales-site="upip"] .hero-actions .button{font-size:14px;min-height:48px;padding:14px 19px}
+body[data-sales-site="upip"] .hero-actions .hero-cta,.sales-guidance .button{background:#b9a2f2;color:#181326;border-color:#b9a2f2;border-radius:8px;box-shadow:none}
+body[data-sales-site="upip"] .hero-actions .hero-contact{border-color:#817091;border-radius:8px;color:#f4efff}
+body[data-sales-site="upip"] .hero-presence-copy>p.hero-note{font-size:11px;line-height:1.8}
+body[data-sales-site="upip"] .sales-trailer{font-size:11px;margin-top:18px}
+body[data-sales-site="upip"] .sales-trailer>span{width:27px;height:27px}
+body[data-sales-site="upip"] .journey-intro{padding-block:45px 25px}
+body[data-sales-site="upip"] .center-heading h2{font-size:clamp(29px,3vw,39px);line-height:1.18}
+body[data-sales-site="upip"] .pricing{padding-block:35px 55px}
+body[data-sales-site="upip"] .price-card{display:flex;flex-direction:column;padding:28px 24px;border-radius:10px}
+body[data-sales-site="upip"] .price-card.featured{background:#ebd5c2;color:#272638;border-color:#ebd5c2;box-shadow:none}
+body[data-sales-site="upip"] .price-card.featured :is(.plan-price,.monthly,.device-limit,.plan-features,.plan-tagline,.plan-duration,.inquiry-label){color:inherit}
+body[data-sales-site="upip"] .price-card.featured .plan-button{background:#5941a4;color:#fff;border-color:#5941a4}
+body[data-sales-site="upip"] .price-card.featured .plan-features svg{color:#5941a4}
+body[data-sales-site="upip"] .price-card.featured :is(.plan-price>span,.monthly>strong){color:#272638}
+body[data-sales-site="upip"] .price-card.featured :is(.device-limit svg,.plan-top>svg){color:#5941a4}
+body[data-sales-site="upip"] .price-card .plan-price{font-size:37px}
+body[data-sales-site="upip"] .price-card .monthly,body[data-sales-site="upip"] .price-card .device-limit{font-size:12px}
+body[data-sales-site="upip"] .price-card .plan-features{font-size:12px;line-height:1.8;margin-bottom:25px}
+body[data-sales-site="upip"] .price-card .plan-button{margin-top:auto;font-size:13px;min-height:46px}
+body[data-sales-site="upip"] .best-badge{background:#5941a4;color:#fff;font-size:10px;letter-spacing:.04em}
+body[data-sales-site="upip"] .price-disclosure{font-size:12px;line-height:1.9}
+.sales-guidance{display:grid;grid-template-columns:.95fr 1.05fr;align-items:center;gap:55px;padding-block:60px}
+.sales-guidance h2{font-size:34px;line-height:1.2;letter-spacing:-.03em;margin-block:14px 20px;max-width:22ch}
+.sales-guidance p{font-size:15px;line-height:1.85;color:#c1bacd;margin-bottom:24px}
+.sales-guidance-card{border:1px solid #40344e;padding:24px;border-radius:10px;background:#151326}
+.sales-guidance-card img{width:100%;height:auto}
+.sales-guidance-card ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;list-style:none;padding:0;margin:25px 0}
+.sales-guidance-card strong{font-size:13px;display:block;margin-bottom:10px;line-height:1.4}
+.sales-guidance-card li>span{font-size:12px;line-height:1.8;display:block;color:#c1bacd}
+.sales-guide-visual{margin:0 0 30px}
+.sales-guide-visual img{width:100%;height:auto;border-radius:10px}
+.sales-guide-visual figcaption{font-size:12px;line-height:1.8;color:#c1bacd;margin-top:14px}
+body[data-sales-site="upip"] .article-prose{font-size:16px;line-height:1.9;max-width:900px}
+body[data-sales-site="upip"] .article-prose h2{font-size:27px;line-height:1.25;scroll-margin-top:calc(var(--experience-header-height,80px) + 25px)}
+body[data-sales-site="upip"] .article-prose .panel p,body[data-sales-site="upip"] .article-prose .source-note{font-size:14px;line-height:1.85}
+body[data-sales-site="upip"] .prose{font-size:15px;line-height:1.85}
+body[data-sales-site="upip"] .hero-presence-note{font-size:10px}
+.sales-decision-notes{border-top:1px solid #40344e;padding-block:50px}
+.sales-decision-notes>h2{font-size:32px;line-height:1.25;max-width:28ch;margin-bottom:30px}
+.sales-decision-notes>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+.sales-decision-notes h3{font-size:19px;line-height:1.4;margin-bottom:18px}
+.sales-decision-notes p{font-size:14px;line-height:1.9;color:#c1bacd;margin-bottom:20px}
+@media(max-width:760px){.sales-decision-notes>h2{font-size:27px}.sales-decision-notes>div{grid-template-columns:1fr;gap:25px}.sales-decision-notes article{border-bottom:1px solid #40344e;padding-bottom:10px}.sales-decision-notes p{font-size:14px}}
+@media(max-width:950px){.sales-guidance{gap:30px}.sales-guidance h2{font-size:29px}body[data-sales-site="upip"] .price-card{padding-inline:22px}}
+@media(max-width:760px){body[data-sales-site="upip"] .hero h1{font-size:39px}body[data-sales-site="upip"] .hero-presence-copy>p{font-size:15px}body[data-sales-site="upip"] .hero-actions{display:grid;grid-template-columns:1fr;gap:10px}body[data-sales-site="upip"] .hero-actions .button{width:100%;justify-content:center;min-width:0}body[data-sales-site="upip"] .price-grid{grid-template-columns:minmax(0,1fr);gap:26px}body[data-sales-site="upip"] .price-card{padding:28px 25px}body[data-sales-site="upip"] .price-card .plan-price{font-size:40px}body[data-sales-site="upip"] .price-card .plan-tagline,body[data-sales-site="upip"] .price-card .plan-features{font-size:14px}body[data-sales-site="upip"] .price-card .monthly,body[data-sales-site="upip"] .price-card .device-limit{font-size:13px}body[data-sales-site="upip"] .price-card .inquiry-label{font-size:11px}.sales-guidance{grid-template-columns:1fr;gap:25px;padding-block:40px}.sales-guidance h2{font-size:29px}.sales-guidance-card{padding:20px}.sales-guidance-card ol{grid-template-columns:1fr;gap:16px}.sales-guidance-card li{display:grid;grid-template-columns:110px 1fr;gap:12px}.sales-guidance-card strong{margin:0}.sales-guidance p{font-size:14px}body[data-sales-site="upip"] .article-prose{font-size:15px}body[data-sales-site="upip"] .article-prose h2{font-size:24px}}
+
+.sales-refund{display:flex;gap:18px;align-items:flex-start;text-align:left;border:1px solid #51406b;background:#181426;padding:24px;border-radius:9px;margin-top:30px}.sales-refund>svg{flex-shrink:0;color:#c3b2ff;margin-top:4px}.sales-refund h3{font-size:19px;line-height:1.4;margin:0 0 12px}.sales-refund p{font-size:13px;line-height:1.85;color:#c1bacd;margin:0 0 15px}.sales-refund .inline-link{font-size:12px}body[data-sales-site="upip"] .price-card.featured{transform:none}
+body[data-sales-site="upip"] .brand .purple{color:#b197ff}

@@ -7,7 +7,7 @@ import { contentUpdatedForPath } from '@/lib/content-updates';
 
 export function seo(path: string, custom?: { title: string; description: string }): Metadata {
   const page = custom || pages[path];
-  const title = page.title.includes(business.name) ? page.title : `${page.title} | ${business.name}`;
+  const title = (page.title.includes(business.name) || page.title.includes(business.brandLabel)) ? page.title : `${page.title} | ${business.name}`;
   const article = articles.find(item => path === `/ratgeber/${item.slug}`);
   return {
     title: { absolute: title }, description: page.description,

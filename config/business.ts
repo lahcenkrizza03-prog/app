@@ -1,6 +1,7 @@
 export const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === '1';
 export const business = {
   name: 'upip-tv.com',
+  brandLabel: 'Upip TV',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://upip-tv.com',
   locale: 'de-DE',
   currency: 'EUR',
@@ -55,7 +56,13 @@ export function pageUrl(path: string) {
   return `${business.url}${path === '/' && !isStaticExport ? '' : sitePath(path)}`;
 }
 export function planMessage(months: number) {
-  return `Ich möchte den upip-tv.com 1 Gerät ${planDuration(months)} Plan anfragen.`;
+  const plan = plans.find(item => item.months === months);
+  if (!plan) throw new RangeError('Unbekannte Laufzeit');
+  return `Ich möchte den upip-tv.com 1 Gerät ${planDuration(months)} Plan anfragen.
+Gesamtpreis: ${money(plan.cents)} (${business.currency})
+Website: ${business.url.replace(/\/$/, '')}/
+Plan-ID: upip-1-${months}
+Bitte Leistungsumfang, Gerätefreigabe und Bedingungen vor Vertrag bestätigen.`;
 }
 export function whatsappLink(message = 'Ich möchte mehr über upip-tv.com erfahren.') {
   return `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(message)}`;

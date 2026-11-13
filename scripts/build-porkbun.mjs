@@ -43,6 +43,11 @@ for (const route of paths) {
   const html = fs.readFileSync(file, 'utf8');
   if (!html.includes(pageUrl(route))) throw new Error(`Incorrect canonical origin in ${route}.`);
 }
+const salesHome = fs.readFileSync(path.join(client, 'index.html'), 'utf8');
+const salesMain = salesHome.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] || '';
+const salesWords = salesMain.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/g, '').replace(/<[^>]*>/g, ' ').split(/\s+/).filter(Boolean).length;
+if (!salesMain.includes('<h1') || !salesMain.includes('price-card') || salesMain.includes('loading-layout') || salesWords < 1200) throw new Error('Expected substantive sales content and prices in the initial HTML main; words=' + salesWords);
+console.log('Verified initial HTML main: ' + salesWords + ' words, heading and all pricing rendered before JavaScript.');
 if (!fs.existsSync(path.join(client, '404.html')) && fs.existsSync(path.join(client, '404/index.html'))) {
   fs.copyFileSync(path.join(client, '404/index.html'), path.join(client, '404.html'));
 }

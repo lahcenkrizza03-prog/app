@@ -19,7 +19,8 @@
     "indexnow": "node scripts/indexnow.mjs",
     "build:porkbun": "node --experimental-strip-types scripts/build-porkbun.mjs",
     "preview:porkbun": "node --experimental-strip-types scripts/serve-porkbun.mjs",
-    "test:porkbun": "node --experimental-strip-types scripts/test-porkbun.mjs"
+    "test:porkbun": "node --experimental-strip-types scripts/test-porkbun.mjs",
+    "publish:porkbun": "node scripts/publish-porkbun.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
