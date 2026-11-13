@@ -1,14 +1,14 @@
 {
-  "appBrowserRuntime": "_next/static/chunks/DDiOKXfl.js",
-  "appBrowserEntry": "_next/static/chunks/DDiOKXfl.js",
+  "appBrowserRuntime": "_next/static/chunks/YhqY-GSh.js",
+  "appBrowserEntry": "_next/static/chunks/YhqY-GSh.js",
   "appRouteManifest": "_next/static/chunks/DPmBXA2B.js",
   "appClientReferenceChunks": {
     "references": {
       "06f55b461cdd": 0,
       "a95244d56b8f": 0,
-      "1697f05726af": 1,
-      "aa7f0c7bab4d": 2,
-      "e5bebc510e04": 3,
+      "aa7f0c7bab4d": 1,
+      "e5bebc510e04": 2,
+      "1697f05726af": 3,
       "ce46c7512ef9": 4,
       "256dff480a84": 4,
       "f770e1b848d9": 4,
@@ -16,18 +16,10 @@
     },
     "modules": [
       {
-        "file": "_next/static/chunks/CF4u7IaT.js",
+        "file": "_next/static/chunks/BJsCccqY.js",
         "imports": [
-          "_next/static/chunks/Dih6TnEN.js",
-          "_next/static/chunks/DppJffOc.js"
-        ],
-        "css": []
-      },
-      {
-        "file": "_next/static/chunks/CVKfa806.js",
-        "imports": [
-          "_next/static/chunks/Dih6TnEN.js",
-          "_next/static/chunks/CiTii--i.js"
+          "_next/static/chunks/BgEXJ_I3.js",
+          "_next/static/chunks/CN9OhcG1.js"
         ],
         "css": []
       },
@@ -37,18 +29,26 @@
         "css": []
       },
       {
-        "file": "_next/static/chunks/CyuE1tDI.js",
+        "file": "_next/static/chunks/D3hvw9DB.js",
         "imports": [
-          "_next/static/chunks/DppJffOc.js",
-          "_next/static/chunks/Dih6TnEN.js"
+          "_next/static/chunks/CN9OhcG1.js",
+          "_next/static/chunks/BgEXJ_I3.js"
         ],
         "css": []
       },
       {
-        "file": "_next/static/chunks/DYEr8FOL.js",
+        "file": "_next/static/chunks/DtkiMoEc.js",
         "imports": [
-          "_next/static/chunks/Dih6TnEN.js",
-          "_next/static/chunks/CiTii--i.js"
+          "_next/static/chunks/BgEXJ_I3.js",
+          "_next/static/chunks/BBgVDKzt.js"
+        ],
+        "css": []
+      },
+      {
+        "file": "_next/static/chunks/ShMtxMLe.js",
+        "imports": [
+          "_next/static/chunks/BgEXJ_I3.js",
+          "_next/static/chunks/BBgVDKzt.js"
         ],
         "css": []
       }
