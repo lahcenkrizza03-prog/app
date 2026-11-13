@@ -18,6 +18,9 @@ for (const name of ['app', 'components', 'config', 'content', 'lib', 'public', '
   fs.cpSync(path.join(root, name), path.join(checkout, name), { recursive: true });
 }
 fs.symlinkSync(path.join(root, 'node_modules'), path.join(checkout, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir');
+// A static document cannot benefit from a route-level streaming placeholder.
+// Keep the Worker loading state, but export complete content inside <main>.
+fs.rmSync(path.join(checkout, 'app/[slug]/loading.tsx'), { force: true });
 // The dynamic route's streamed notFound() can retain status 200 in this Vinext
 // release. Export the shared error design through a build-only concrete route.
 fs.mkdirSync(path.join(checkout, 'app/404'), { recursive: true });
@@ -42,6 +45,12 @@ for (const route of paths) {
   if (!fs.existsSync(file)) throw new Error(`Static export is incomplete: ${route} has no HTML.`);
   const html = fs.readFileSync(file, 'utf8');
   if (!html.includes(pageUrl(route))) throw new Error(`Incorrect canonical origin in ${route}.`);
+  if (shouldIndexPath(route)) {
+    const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] || '';
+    if (!/<h1\b/.test(main) || main.includes('loading-layout')) {
+      throw new Error(`Indexable static page must contain its heading and completed content in main: ${route}`);
+    }
+  }
 }
 const salesHome = fs.readFileSync(path.join(client, 'index.html'), 'utf8');
 const salesMain = salesHome.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] || '';
