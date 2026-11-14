@@ -103,7 +103,7 @@
   }
  }
  async function init(){
-  try{const r=await fetch('/site-experience.json?v=20261114seo');if(!r.ok)return;config=await r.json()}catch{return}
+  try{const r=await fetch('/site-experience.json?v=20261114growth');if(!r.ok)return;config=await r.json()}catch{return}
   sourceLanguage=config.language||document.documentElement.lang.split('-')[0]||'en';language=supported(sourceLanguage)?sourceLanguage:'en';
   window.siteExperienceTranslate=translate;
   document.documentElement.dataset.sourceLanguage=sourceLanguage;document.documentElement.style.setProperty('--experience-accent',config.accent||'#8578ff');document.documentElement.style.setProperty('--experience-accent-ink',config.accentInk||'#101522');
