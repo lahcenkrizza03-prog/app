@@ -12,7 +12,7 @@
   nl:{language:'Taal kiezen',contact:'WhatsApp openen',annual:'Jaarabonnement',hello:'Hallo',question:'Ik heb een vraag over uw abonnementen.',website:'Website'}
  };
  const globe='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18Z"/></svg>';
- const whatsapp='<svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3a12.8 12.8 0 0 0-11 19.4L3.3 29l6.8-1.8A12.8 12.8 0 1 0 16 3Zm0 2.3a10.5 10.5 0 1 1-5.3 19.6l-.4-.2-4 .9 1-3.9-.3-.4A10.5 10.5 0 0 1 16 5.3Zm-4.5 5.1c-.3 0-.6.1-.8.4-.4.4-1.1 1.1-1.1 2.6s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.4 4.6 2.6.9 3.2.7 3.8.6.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.7-.4l-2.2-1c-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.4-.2-1.5-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.4 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.4c-.2-.6-.5-.6-.7-.6h-.5Z"/></svg>';
+ const whatsapp='<img src="/whatsapp-mark-20261114.svg" width="32" height="32" alt="" decoding="async">';
  const sourceFor=new WeakMap(),attributeSources=new WeakMap(),loaded=new Map();
  let config,sourceLanguage='en',language='en',dictionary={},header,control,contact,observer,translating=false,scheduled=false;const pendingRoots=new Set();
  const normalize=s=>s.replace(/\u00a0/g,' ').replace(/\s+/g,' ').trim();
@@ -71,7 +71,7 @@
  }
  function updateControls(){
   if(control){control.querySelector('[data-language-code]').textContent=language.toUpperCase();control.querySelector('.experience-language-trigger').setAttribute('aria-label',labels[language].language);for(const item of control.querySelectorAll('[data-language]'))item.setAttribute('aria-checked',String(item.dataset.language===language))}
-  if(contact){contact.setAttribute('aria-label',labels[language].contact);contact.title=labels[language].contact;contact.querySelector('.experience-whatsapp-label').textContent=labels[language].contact;
+  if(contact){contact.setAttribute('aria-label',labels[language].contact);contact.title=labels[language].contact;contact.querySelector('.experience-whatsapp-label').textContent='WhatsApp';
    const msg=`${labels[language].hello} ${config.brand}, ${labels[language].question}\n${labels[language].website}: https://${config.domain}/`;
    contact.href='https://wa.me/'+config.whatsapp+'?text='+encodeURIComponent(msg);
   }
@@ -103,7 +103,7 @@
   }
  }
  async function init(){
-  try{const r=await fetch('/site-experience.json?v=20261113readability');if(!r.ok)return;config=await r.json()}catch{return}
+  try{const r=await fetch('/site-experience.json?v=20261114whatsapp');if(!r.ok)return;config=await r.json()}catch{return}
   sourceLanguage=config.language||document.documentElement.lang.split('-')[0]||'en';language=supported(sourceLanguage)?sourceLanguage:'en';
   window.siteExperienceTranslate=translate;
   document.documentElement.dataset.sourceLanguage=sourceLanguage;document.documentElement.style.setProperty('--experience-accent',config.accent||'#8578ff');document.documentElement.style.setProperty('--experience-accent-ink',config.accentInk||'#101522');
