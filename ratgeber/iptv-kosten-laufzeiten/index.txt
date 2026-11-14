@@ -1,9 +1,9 @@
-0:{"__vinext_streaming_metadata_outlet:route:/ratgeber/iptv-kosten-laufzeiten/":"$L1","page:/ratgeber/iptv-kosten-laufzeiten/":"$L2","layout:/":"$L3","route:/ratgeber/iptv-kosten-laufzeiten/":"$L4","__route":"route:/ratgeber/iptv-kosten-laufzeiten/","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/ratgeber/iptv-kosten-laufzeiten/":"[\"page\",\"page:/ratgeber/:article\",\"root-boundary:/\",\"[\\\"ratgeber\\\",\\\"article|iptv-kosten-laufzeiten|d\\\"]\"]"},"__srcPage":["ratgeber","[article]","page"],"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:411a256097cf43bc","deploymentVersion":"2f67cee6-bdc3-4b89-a7fe-98fecfe148e1","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
+0:{"__vinext_streaming_metadata_outlet:route:/ratgeber/iptv-kosten-laufzeiten/":"$L1","page:/ratgeber/iptv-kosten-laufzeiten/":"$L2","layout:/":"$L3","route:/ratgeber/iptv-kosten-laufzeiten/":"$L4","__route":"route:/ratgeber/iptv-kosten-laufzeiten/","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/ratgeber/iptv-kosten-laufzeiten/":"[\"page\",\"page:/ratgeber/:article\",\"root-boundary:/\",\"[\\\"ratgeber\\\",\\\"article|iptv-kosten-laufzeiten|d\\\"]\"]"},"__srcPage":["ratgeber","[article]","page"],"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:411a256097cf43bc","deploymentVersion":"8a5bd269-1984-4531-80fe-9098fa4dab4d","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
 5:"RedirectBoundary"
 6:I["a54e148db4d5",[],"$5",1]
-7:"m/_next/static/chunks/D8jZLLNI.js"
-8:"p/_next/static/chunks/BgEXJ_I3.js"
-9:"p/_next/static/chunks/BBgVDKzt.js"
+7:"m/_next/static/chunks/s6xPPTqL.js"
+8:"p/_next/static/chunks/DWHB6r8u.js"
+9:"p/_next/static/chunks/CkYoWqR7.js"
 a:I["256dff480a84",["$7","","$8","","$9",""],"Header",1]
 b:I["ef7b7d49b2c7",[],"Children",1]
 c:I["256dff480a84",["$7","","$8","","$9",""],"Footer",1]
