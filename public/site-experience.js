@@ -72,7 +72,7 @@
  function updateControls(){
   if(control){control.querySelector('[data-language-code]').textContent=language.toUpperCase();control.querySelector('.experience-language-trigger').setAttribute('aria-label',labels[language].language);for(const item of control.querySelectorAll('[data-language]'))item.setAttribute('aria-checked',String(item.dataset.language===language))}
   if(contact){contact.setAttribute('aria-label',labels[language].contact);contact.title=labels[language].contact;contact.querySelector('.experience-whatsapp-label').textContent='WhatsApp';
-   const msg=`${labels[language].hello} ${config.brand}, ${labels[language].question}\n${labels[language].website}: https://${config.domain}/`;
+   const msg=`${labels[language].hello} ${config.brand.replace(/\.(?:com|net|org|tech|shop|online|stream|xyz|pro|de)\b/gi,'')}, ${labels[language].question}`;
    contact.href='https://wa.me/'+config.whatsapp+'?text='+encodeURIComponent(msg);
   }
  }
@@ -103,7 +103,7 @@
   }
  }
  async function init(){
-  try{const r=await fetch('/site-experience.json?v=20261114whatsapp');if(!r.ok)return;config=await r.json()}catch{return}
+  try{const r=await fetch('/site-experience.json?v=20261114copy');if(!r.ok)return;config=await r.json()}catch{return}
   sourceLanguage=config.language||document.documentElement.lang.split('-')[0]||'en';language=supported(sourceLanguage)?sourceLanguage:'en';
   window.siteExperienceTranslate=translate;
   document.documentElement.dataset.sourceLanguage=sourceLanguage;document.documentElement.style.setProperty('--experience-accent',config.accent||'#8578ff');document.documentElement.style.setProperty('--experience-accent-ink',config.accentInk||'#101522');

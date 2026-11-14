@@ -58,12 +58,8 @@ export function pageUrl(path: string) {
 export function planMessage(months: number) {
   const plan = plans.find(item => item.months === months);
   if (!plan) throw new RangeError('Unbekannte Laufzeit');
-  return `Ich möchte den upip-tv.com 1 Gerät ${planDuration(months)} Plan anfragen.
-Gesamtpreis: ${money(plan.cents)} (${business.currency})
-Website: ${business.url.replace(/\/$/, '')}/
-Plan-ID: upip-1-${months}
-Bitte Leistungsumfang, Gerätefreigabe und Bedingungen vor Vertrag bestätigen.`;
+  return `${business.brandLabel}\nPlan: ${planDuration(months)} · ${plan.devices} Gerät\nGesamtpreis: ${money(plan.cents)} ${business.currency}`;
 }
-export function whatsappLink(message = 'Ich möchte mehr über upip-tv.com erfahren.') {
-  return `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(message)}`;
+export function whatsappLink(message = 'Hallo Upip TV, ich habe eine Frage zu Ihren Abonnements.') {
+  return `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(message.replace(/upip-tv\.com/gi,business.brandLabel))}`;
 }

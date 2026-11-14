@@ -16,7 +16,7 @@ test('monthly values use German EUR formatting and actual division', () => {
   assert.deepEqual(plans.map(p => money(p.cents / p.months).replace(/\s/g, '')), ['12,00€','9,67€','7,50€','4,92€']);
 });
 test('each WhatsApp link has the correct number and exact German plan inquiry', () => {
-  for (const p of plans) { const link = new URL(whatsappLink(planMessage(p.months))); assert.equal(link.origin, 'https://wa.me'); assert.equal(link.pathname, '/12313354123'); const message = link.searchParams.get('text'); assert.ok(message.includes(`1 Gerät ${p.months} ${p.months === 1 ? 'Monat' : 'Monate'}`)); assert.ok(message.includes(money(p.cents))); assert.ok(message.includes('(EUR)')); assert.ok(message.includes('https://upip-tv.com/')); assert.ok(message.includes(`upip-1-${p.months}`)); }
+  for (const p of plans) { const link = new URL(whatsappLink(planMessage(p.months))); assert.equal(link.origin, 'https://wa.me'); assert.equal(link.pathname, '/12313354123'); const message = link.searchParams.get('text'); assert.ok(message.includes(`Plan: ${p.months} ${p.months === 1 ? 'Monat' : 'Monate'} · 1 Gerät`)); assert.ok(message.includes(money(p.cents))); assert.ok(message.includes(' EUR')); assert.equal(message.split('\n')[0],'Upip TV'); assert.ok(!message.includes('upip-tv.com')); assert.ok(!message.includes('upip-1-')); assert.equal(message.split('\n').length,3); }
 });
 test('catalog has provenance, unique ids, local artwork and no unverified streaming claims', () => {
   assert.equal(new Set(catalog.map(t => t.id)).size, catalog.length);
