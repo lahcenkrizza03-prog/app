@@ -62,3 +62,6 @@ dialog{padding:0;max-width:850px;width:calc(100% - 40px);border:1px solid #61428
  .review-empty h2{font-size:17px}.review-empty p{font-size:13px;line-height:1.6}
  .faq-section p,.accordion summary,.accordion details p{font-size:14px;line-height:1.7}
 }
+
+/* Filled guide actions must retain a contrasting label on the white reading theme. */
+body .prose a.button:not(.outline){color:#fff}
