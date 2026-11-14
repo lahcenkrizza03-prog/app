@@ -70,7 +70,7 @@
   for(const badge of document.querySelectorAll('.experience-annual-ribbon'))if(badge.textContent!==labels[language].annual)badge.textContent=labels[language].annual;
  }
  function updateControls(){
-  if(control){control.querySelector('[data-language-code]').textContent=language.toUpperCase();control.querySelector('.experience-language-trigger').setAttribute('aria-label',labels[language].language);for(const item of control.querySelectorAll('[data-language]'))item.setAttribute('aria-checked',String(item.dataset.language===language))}
+  if(control){control.querySelector('[data-language-code]').textContent=language.toUpperCase();control.querySelector('.experience-language-trigger').setAttribute('aria-label',language.toUpperCase()+' — '+labels[language].language);for(const item of control.querySelectorAll('[data-language]'))item.setAttribute('aria-checked',String(item.dataset.language===language))}
   if(contact){contact.setAttribute('aria-label',labels[language].contact);contact.title=labels[language].contact;contact.querySelector('.experience-whatsapp-label').textContent='WhatsApp';
    const msg=`${labels[language].hello} ${config.brand.replace(/\.(?:com|net|org|tech|shop|online|stream|xyz|pro|de)\b/gi,'')}, ${labels[language].question}`;
    contact.href='https://wa.me/'+config.whatsapp+'?text='+encodeURIComponent(msg);
@@ -103,12 +103,12 @@
   }
  }
  async function init(){
-  try{const r=await fetch('/site-experience.json?v=20261114copy');if(!r.ok)return;config=await r.json()}catch{return}
+  try{const r=await fetch('/site-experience.json?v=20261114seo');if(!r.ok)return;config=await r.json()}catch{return}
   sourceLanguage=config.language||document.documentElement.lang.split('-')[0]||'en';language=supported(sourceLanguage)?sourceLanguage:'en';
   window.siteExperienceTranslate=translate;
   document.documentElement.dataset.sourceLanguage=sourceLanguage;document.documentElement.style.setProperty('--experience-accent',config.accent||'#8578ff');document.documentElement.style.setProperty('--experience-accent-ink',config.accentInk||'#101522');
   installHeader();
-  contact=document.createElement('a');contact.className='experience-whatsapp';contact.dataset.noTranslate='';contact.target='_blank';contact.rel='noopener noreferrer';contact.innerHTML=whatsapp+'<span class="experience-whatsapp-label"></span>';document.body.append(contact);
+  contact=document.createElement('a');contact.className='experience-whatsapp';contact.dataset.noTranslate='';contact.target='_blank';contact.rel='noopener noreferrer';contact.innerHTML=whatsapp+'<span class="experience-whatsapp-label"></span>';const contactRegion=document.createElement('aside');contactRegion.className='experience-contact-region';contactRegion.dataset.noTranslate='';contactRegion.setAttribute('aria-label','WhatsApp');contactRegion.append(contact);document.body.append(contactRegion);
   updateControls();markAnnual();
   observer=new MutationObserver(records=>{const changed=records.filter(r=>!r.target.parentElement?.closest('.experience-language,.experience-whatsapp,[data-no-translate]'));if(changed.length)schedule(changed)});observe();
   document.addEventListener('pointerdown',e=>{if(control&&!control.contains(e.target))closeLanguage()});
