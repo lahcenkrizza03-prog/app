@@ -36,3 +36,13 @@ body:has(.experience-whatsapp) footer{padding-bottom:max(95px,env(safe-area-inse
 
 /* Reading palette; fingerprint preparation remains authoritative. */
 .experience-whatsapp,.experience-whatsapp:hover{background:#174bb7!important;color:#fff!important;border-color:#fff!important;box-shadow:0 0 0 2px #174bb7,0 7px 22px #15233b40!important}.experience-whatsapp:before,.experience-whatsapp:after{border-color:#174bb7!important}
+
+/* Clear WhatsApp release 20261114. */
+/* Clear, recognisable contact control; motion stays on the outer ring only. */
+body a.whatsapp,body a.experience-whatsapp{background:#087f5b!important;color:#fff!important;border:2px solid #fff!important;box-shadow:0 0 0 2px #087f5b,0 7px 24px #063e3440!important;min-height:60px;gap:10px;font-weight:750;line-height:1.2;isolation:isolate}
+body a.whatsapp:before,body a.experience-whatsapp:before,body a.experience-whatsapp:after{border-color:#087f5b!important}
+body a.whatsapp img,body a.experience-whatsapp img{display:block;width:32px;height:32px;min-width:32px;object-fit:contain;flex:none}
+body a.whatsapp:hover,body a.experience-whatsapp:hover{background:#06664a!important;filter:none!important}
+body a.whatsapp:focus-visible,body a.experience-whatsapp:focus-visible{outline:3px solid #15243c!important;outline-offset:5px;animation:none}
+@media(max-width:800px){body a.whatsapp,body a.experience-whatsapp{width:62px;height:62px;min-width:62px;min-height:62px;padding:0!important;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom))}body a.whatsapp img,body a.experience-whatsapp img{width:34px;height:34px;min-width:34px}body a.whatsapp>span,body a.experience-whatsapp>span{display:none!important}}
+@media(prefers-reduced-motion:reduce){body a.whatsapp,body a.experience-whatsapp,body a.whatsapp:before,body a.experience-whatsapp:before,body a.experience-whatsapp:after{animation:none!important;transition:none!important}}
